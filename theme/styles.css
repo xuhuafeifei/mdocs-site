@@ -1,0 +1,134 @@
+/* ===== Rspress CSS Variable Overrides — mdocs Green Theme ===== */
+
+:root {
+  --rp-c-brand: #3ccd6e;
+  --rp-c-brand-dark: #2ba357;
+  --rp-c-brand-darker: #1c7a40;
+  --rp-c-brand-light: #a5e7bc;
+  --rp-c-brand-lighter: #ebf9f0;
+
+  --rp-c-link: #2ba357;
+  --rp-c-link-hover: #1c7a40;
+
+  --rp-c-text-1: #2c3e2f;
+  --rp-c-text-2: #4b5563;
+  --rp-c-text-3: #6b7280;
+
+  --rp-c-bg: #ffffff;
+  --rp-c-bg-soft: #f9fafb;
+  --rp-c-bg-mute: #f5f5f5;
+
+  --rp-c-divider: #e5e7eb;
+  --rp-code-block-bg: #f5f5f5;
+  --rp-c-brand-tint: #ebf9f0;
+}
+
+/* Code blocks */
+pre {
+  border-radius: 12px !important;
+  border: 1px solid #e0e8e0 !important;
+  padding: 16px !important;
+  font-size: 0.875rem !important;
+}
+
+:not(pre) > code {
+  background: #ebf9f0 !important;
+  color: #1c7a40 !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 3px solid #3ccd6e !important;
+  background: #f9fafb !important;
+  border-radius: 0 8px 8px 0 !important;
+  padding: 12px 20px !important;
+}
+
+/* Tables */
+thead tr {
+  background: #ebf9f0 !important;
+}
+
+thead th {
+  color: #1c7a40 !important;
+  font-weight: 600 !important;
+  padding: 12px !important;
+}
+
+tbody td {
+  padding: 10px !important;
+}
+
+tbody tr:hover {
+  background: #f8fff9 !important;
+}
+
+/* Links in doc content */
+.rspress-doc a {
+  color: #2ba357 !important;
+  text-decoration: none !important;
+}
+
+.rspress-doc a:hover {
+  color: #1c7a40 !important;
+  text-decoration: underline !important;
+}
+
+/* Sidebar active item */
+.rspress-sidebar .rspress-sidebar-item.active {
+  background: #ebf9f0 !important;
+  border-left: 4px solid #3ccd6e !important;
+  color: #1c7a40 !important;
+  font-weight: 600 !important;
+}
+
+/* Sidebar section header */
+.rspress-sidebar-section-header {
+  font-size: 0.75rem !important;
+  color: #9ca3af !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  margin-top: 16px !important;
+}
+
+/* HR */
+.rspress-doc hr {
+  border-color: #e0e8e0 !important;
+  margin: 32px 0 !important;
+}
+
+/* Images */
+.rspress-doc img {
+  border-radius: 12px !important;
+  border: 1px solid #d0f0e0 !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #a5e7bc !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9fafb !important;
+}
+
+/* Nav bar */
+.rspress-nav {
+  backdrop-filter: blur(8px) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.rspress-nav a {
+  color: #374151 !important;
+}
+
+.rspress-nav a:hover {
+  color: #2ba357 !important;
+}
+
+.rspress-nav a.active {
+  color: #2ba357 !important;
+  font-weight: 600 !important;
+}

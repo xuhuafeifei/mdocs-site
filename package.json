@@ -1,0 +1,32 @@
+{
+  "name": "mdocs-site",
+  "private": true,
+  "version": "0.1.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview"
+  },
+  "dependencies": {
+    "lucide-react": "^1.14.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rspress": "2.0.0-beta.21"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.5.0",
+    "tailwindcss": "^4.2.4",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.8"
+  }
+}
