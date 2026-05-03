@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { ChevronRight } from 'lucide-react';
 
 interface FeatureCardProps {
   icon: ReactNode;
@@ -16,7 +17,7 @@ export function FeatureCard({ icon, title, description, tags, learnMore, delay }
       style={{
         background: '#ffffff',
         borderRadius: '20px',
-        padding: '32px',
+        padding: 'clamp(24px, 4vw, 32px)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04)',
         opacity: 0,
         transform: 'translateY(20px)',
@@ -38,20 +39,35 @@ export function FeatureCard({ icon, title, description, tags, learnMore, delay }
       }}
     >
       <div>
-        {/* Icon */}
-        <div style={{ color: '#3ccd6e', marginBottom: '16px' }}>{icon}</div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            marginBottom: '10px',
+            color: '#4CAF50',
+          }}
+        >
+          <div style={{ display: 'flex', flexShrink: 0 }}>{icon}</div>
+          <h3
+            style={{
+              fontSize: '1.25rem',
+              fontWeight: 600,
+              color: '#2c3e2f',
+              margin: 0,
+              lineHeight: 1.3,
+              textAlign: 'left',
+            }}
+          >
+            {title}
+          </h3>
+        </div>
 
-        {/* Title */}
-        <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#2c3e2f', margin: '0 0 8px' }}>
-          {title}
-        </h3>
-
-        {/* Description */}
         <p
           style={{
             fontSize: '0.9375rem',
-            color: '#6b7280',
-            lineHeight: 1.6,
+            color: '#4b5563',
+            lineHeight: 1.65,
             margin: '0 0 16px',
           }}
         >
@@ -60,17 +76,24 @@ export function FeatureCard({ icon, title, description, tags, learnMore, delay }
       </div>
 
       <div>
-        {/* Tags */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '6px',
+            marginBottom: '12px',
+          }}
+        >
           {tags.map((tag) => (
             <span
               key={tag}
               style={{
                 fontSize: '0.75rem',
-                color: '#2ba357',
-                background: '#ebf9f0',
+                color: '#166534',
+                background: '#ecfdf5',
                 borderRadius: '16px',
-                padding: '3px 10px',
+                padding: '4px 10px',
+                fontWeight: 500,
               }}
             >
               {tag}
@@ -78,17 +101,9 @@ export function FeatureCard({ icon, title, description, tags, learnMore, delay }
           ))}
         </div>
 
-        {/* Learn more link */}
-        <a
-          href={learnMore}
-          style={{
-            color: '#2ba357',
-            fontSize: '0.875rem',
-            fontWeight: 500,
-            textDecoration: 'none',
-          }}
-        >
-          了解更多 →
+        <a href={learnMore} className="mdocs-learn-more">
+          查看详情
+          <ChevronRight className="mdocs-learn-more-icon" size={20} strokeWidth={2.5} aria-hidden />
         </a>
       </div>
 

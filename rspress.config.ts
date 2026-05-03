@@ -13,10 +13,12 @@ export default defineConfig({
     darkMode: false,
     nav: [
       { text: '首页', link: '/' },
+      { text: '特性', link: '/#features' },
+      { text: '开始', link: '/#cta' },
       { text: '文档', link: '/docs/' },
       {
         text: 'GitHub',
-        link: 'https://github.com',
+        link: 'https://github.com/xuhuafeifei/mdocs',
       },
     ],
     sidebar: {

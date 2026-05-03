@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=Manrope:wght@500..700&family=Noto+Sans+SC:wght@400..700&display=swap');
+
 /* ===== Rspress CSS Variable Overrides — mdocs Green Theme ===== */
 
 :root {
@@ -21,6 +23,183 @@
   --rp-c-divider: #e5e7eb;
   --rp-code-block-bg: #f5f5f5;
   --rp-c-brand-tint: #ebf9f0;
+
+  --mdocs-font-sans: 'Inter', 'Noto Sans SC', 'Manrope', system-ui, -apple-system, sans-serif;
+}
+
+body,
+.rspress-nav {
+  font-family: var(--mdocs-font-sans);
+}
+
+/* ----- Home page: buttons & focus ----- */
+.mdocs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-decoration: none;
+  border-radius: 32px;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.mdocs-btn:focus-visible {
+  outline: 3px solid #1c7a40;
+  outline-offset: 2px;
+}
+
+.mdocs-btn-primary {
+  background: linear-gradient(135deg, #3ccd6e, #2ba357);
+  color: #ffffff;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 8px rgba(60, 205, 110, 0.35);
+}
+
+.mdocs-btn-primary:hover {
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(60, 205, 110, 0.45);
+}
+
+.mdocs-btn-secondary {
+  background: #ebf9f0;
+  color: #1c7a40;
+  border: 2px solid #2ba357;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.mdocs-btn-secondary:hover {
+  background: #d8f5e3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(60, 205, 110, 0.22);
+}
+
+.mdocs-hero-actions,
+.mdocs-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mdocs-hero-logo {
+  display: block;
+  margin: 0 auto 8px;
+  transition: transform 0.25s ease;
+}
+
+.mdocs-hero-logo:hover {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.mdocs-hero-title {
+  margin: 0 0 12px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #14532d;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.mdocs-hero-subtitle-en {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #3d6b52;
+}
+
+.mdocs-features-heading-wrap {
+  margin-bottom: 28px;
+}
+
+.mdocs-features-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1c7a40;
+  margin: 0 auto 12px;
+  padding: 20px 28px;
+  max-width: 720px;
+  background: #f0fdf4;
+  border-radius: 12px;
+  border: 1px solid #d0f0e0;
+  box-shadow: 0 1px 3px rgba(20, 83, 45, 0.06);
+}
+
+.mdocs-features-sub {
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #4b5563;
+  margin: 0;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.mdocs-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 4px 4px 4px 0;
+  color: #1c7a40;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.mdocs-learn-more:hover {
+  color: #14532d;
+}
+
+.mdocs-learn-more:focus-visible {
+  outline: 3px solid #1c7a40;
+  outline-offset: 2px;
+}
+
+.mdocs-learn-more-icon {
+  transition: transform 0.2s ease;
+}
+
+.mdocs-learn-more:hover .mdocs-learn-more-icon {
+  transform: translateX(5px);
+}
+
+@media (max-width: 639px) {
+  .mdocs-hero-title {
+    font-size: 2rem;
+  }
+
+  .mdocs-hero-actions .mdocs-btn,
+  .mdocs-cta-actions .mdocs-btn {
+    width: 100%;
+  }
+
+  .mdocs-hero-actions,
+  .mdocs-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mdocs-features-heading {
+    font-size: 1.25rem;
+    padding: 16px 20px;
+  }
 }
 
 /* Code blocks */
@@ -131,4 +310,16 @@ tbody tr:hover {
 .rspress-nav a.active {
   color: #2ba357 !important;
   font-weight: 600 !important;
+}
+
+.rspress-nav a:focus-visible {
+  outline: 3px solid #1c7a40 !important;
+  outline-offset: 2px !important;
+  border-radius: 4px;
+}
+
+.mdocs-footer a:focus-visible {
+  outline: 3px solid #1c7a40;
+  outline-offset: 2px;
+  border-radius: 4px;
 }

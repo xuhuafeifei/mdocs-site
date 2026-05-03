@@ -13,43 +13,36 @@ import { FeatureCard } from './FeatureCard';
 export function FeatureSection() {
   return (
     <section
+      id="features"
       style={{
         background: '#ffffff',
-        padding: '80px 24px',
+        padding: '72px 24px 80px',
       }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        {/* Section title */}
-        <p
-          style={{
-            textAlign: 'center',
-            fontSize: '0.875rem',
-            color: '#9ca3af',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            marginBottom: '48px',
-          }}
-        >
-          为什么选择 mdocs
-        </p>
+        <div className="mdocs-features-heading-wrap">
+          <h2 className="mdocs-features-heading">为什么选择 mdocs</h2>
+          <p className="mdocs-features-sub">
+            适合个人知识库与小型团队协作 — 代码于 GitHub 开放，持续迭代，欢迎共建。
+          </p>
+        </div>
 
-        {/* 2x2 grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '24px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+            gap: '28px',
           }}
         >
           <FeatureCard
             icon={
-              <div style={{ display: 'flex', gap: '4px' }}>
-                <Database size={28} strokeWidth={1.5} />
-                <Folder size={28} strokeWidth={1.5} />
+              <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                <Database size={24} strokeWidth={2} />
+                <Folder size={24} strokeWidth={2} />
               </div>
             }
             title="纯私有化"
-            description="一把 SQLite + 文件系统即跑，不依赖任何外部中间件，数据完全在你手中"
+            description="无需额外服务，SQLite + 本地文件即可运行，数据牢牢掌握在你手中。"
             tags={['无 Redis', '无 MySQL', '无 S3']}
             learnMore="/docs/deployment/requirements"
             delay={0}
@@ -57,9 +50,9 @@ export function FeatureSection() {
 
           <FeatureCard
             icon={
-              <div style={{ display: 'flex', gap: '4px' }}>
-                <FileText size={28} strokeWidth={1.5} />
-                <Pen size={28} strokeWidth={1.5} />
+              <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                <FileText size={24} strokeWidth={2} />
+                <Pen size={24} strokeWidth={2} />
               </div>
             }
             title="Markdown 原生 · 可视化"
@@ -71,13 +64,13 @@ export function FeatureSection() {
 
           <FeatureCard
             icon={
-              <div style={{ display: 'flex', gap: '4px' }}>
-                <Lock size={28} strokeWidth={1.5} />
-                <Mail size={28} strokeWidth={1.5} />
+              <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                <Lock size={24} strokeWidth={2} />
+                <Mail size={24} strokeWidth={2} />
               </div>
             }
             title="无账户 · 灵活协作"
-            description="访问者即身份，无需注册登录，通过「域隔离 + 文档级邀请」实现从完全私有到开放协作"
+            description="无需账号：分享链接即可协作，结合域隔离与文档级邀请，权限精细可控。"
             tags={['无需注册', '邀请链接', '权限可控']}
             learnMore="/docs/core-concepts/invitation"
             delay={0.2}
@@ -85,9 +78,9 @@ export function FeatureSection() {
 
           <FeatureCard
             icon={
-              <div style={{ display: 'flex', gap: '4px' }}>
-                <Cloud size={28} strokeWidth={1.5} />
-                <Save size={28} strokeWidth={1.5} />
+              <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                <Cloud size={24} strokeWidth={2} />
+                <Save size={24} strokeWidth={2} />
               </div>
             }
             title="草稿永不丢"
