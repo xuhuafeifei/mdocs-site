@@ -1,6 +1,8 @@
 import { BookOpen, Rocket } from 'lucide-react';
 import mdocsLogoUrl from '../assets/mdocs-logo.svg?url';
 
+const BASE = import.meta.env.BASE_URL || '/';
+
 interface HeroProps {
   beforeHero?: React.ReactNode;
   afterHero?: React.ReactNode;
@@ -58,11 +60,11 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
 
       <div className="mdocs-hero-actions">
         {beforeHeroActions}
-        <a className="mdocs-btn mdocs-btn-primary" href="/docs/getting-started/installation">
+        <a className="mdocs-btn mdocs-btn-primary" href={`${BASE}docs/getting-started/installation`}>
           <Rocket size={18} strokeWidth={2} aria-hidden />
           快速开始
         </a>
-        <a className="mdocs-btn mdocs-btn-secondary" href="/docs/">
+        <a className="mdocs-btn mdocs-btn-secondary" href={`${BASE}docs/`}>
           <BookOpen size={18} strokeWidth={2} aria-hidden />
           查看文档
         </a>

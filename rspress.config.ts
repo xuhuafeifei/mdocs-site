@@ -1,8 +1,10 @@
 import { defineConfig } from 'rspress/config';
 
+const basePath = process.env.BASE_URL || '';
+
 export default defineConfig({
   root: 'docs',
-  base: process.env.BASE_URL || '/',
+  base: basePath || '/',
   lang: 'zh-CN',
   title: 'mdocs-site',
   description: '开源 Markdown 知识库 · 纯私有化 · 无账户协作',
@@ -12,10 +14,10 @@ export default defineConfig({
   themeConfig: {
     darkMode: false,
     nav: [
-      { text: '首页', link: '/' },
-      { text: '特性', link: '/#features' },
-      { text: '开始', link: '/#cta' },
-      { text: '文档', link: '/docs/' },
+      { text: '首页', link: basePath || '/' },
+      { text: '特性', link: basePath ? `${basePath}/#features` : '/#features' },
+      { text: '开始', link: basePath ? `${basePath}/#cta` : '/#cta' },
+      { text: '文档', link: basePath ? `${basePath}/docs/` : '/docs/' },
       {
         text: 'GitHub',
         link: 'https://github.com/xuhuafeifei/mdocs',
