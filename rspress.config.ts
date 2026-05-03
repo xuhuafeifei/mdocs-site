@@ -4,7 +4,7 @@ export default defineConfig({
   root: 'docs',
   base: process.env.BASE_URL || '/',
   lang: 'zh-CN',
-  title: 'mdocs',
+  title: 'mdocs-site',
   description: '开源 Markdown 知识库 · 纯私有化 · 无账户协作',
   icon: '/favicon.svg',
   logo: '/favicon.svg',
