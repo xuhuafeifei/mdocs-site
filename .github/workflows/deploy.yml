@@ -8,7 +8,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     env:
       BASE_URL: /mdocs-site/
     steps:
@@ -22,7 +27,9 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm run build
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc_build
+          path: doc_build
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
