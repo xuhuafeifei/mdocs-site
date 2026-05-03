@@ -67,26 +67,52 @@ function IllusDualEditing() {
 
 function IllusNoAccount() {
   return (
-    <svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="无账户协作示意图">
-      <circle cx="150" cy="70" r="6" fill="#3ccd6e" opacity="0.3">
-        <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <rect x="120" y="40" width="60" height="60" rx="12" fill="#ebf9f0" stroke="#3ccd6e" strokeWidth="2.5" />
-      <rect x="130" y="50" width="40" height="5" rx="2" fill="#a5e7bc" />
-      <rect x="130" y="62" width="32" height="5" rx="2" fill="#a5e7bc" />
-      <rect x="130" y="74" width="36" height="5" rx="2" fill="#a5e7bc" />
-      <line x1="150" y1="100" x2="150" y2="120" stroke="#3ccd6e" strokeWidth="2" />
-      <line x1="150" y1="120" x2="80" y2="148" stroke="#2ba357" strokeWidth="2" />
-      <line x1="150" y1="120" x2="150" y2="155" stroke="#f59e0b" strokeWidth="2" />
-      <line x1="150" y1="120" x2="220" y2="148" stroke="#9ca3af" strokeWidth="2" />
-      <circle cx="80" cy="148" r="14" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
-      <rect x="74" y="141" width="12" height="14" rx="2" fill="#2ba357" />
-      <path d="M80 157 L80 167" stroke="#2ba357" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="150" cy="155" r="14" fill="#fef3c7" stroke="#f59e0b" strokeWidth="2" />
-      <path d="M144 162 L156 162 M150 156 L150 168" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="220" cy="148" r="14" fill="#f3f4f6" stroke="#9ca3af" strokeWidth="2" />
-      <circle cx="220" cy="143" r="5" fill="#9ca3af" />
-      <path d="M214 157 Q220 153 226 157" stroke="#9ca3af" strokeWidth="2" fill="none" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="300"
+      height="200"
+      viewBox="40 38 492 344"
+      fill="none"
+      aria-label="无账户协作示意图"
+    >
+      <line x1="300" y1="120" x2="100" y2="300" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
+      <line x1="300" y1="120" x2="300" y2="348" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
+      <line x1="300" y1="120" x2="500" y2="300" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
+      <line x1="100" y1="300" x2="300" y2="348" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
+      <line x1="500" y1="300" x2="300" y2="348" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
+      <line x1="100" y1="300" x2="500" y2="300" stroke="#86efac" strokeWidth="1.8" strokeDasharray="4 4" />
+
+      <circle cx="300" cy="120" r="36" fill="none" stroke="#16a34a" strokeWidth="3.5" />
+      <circle cx="300" cy="120" r="14" fill="#86efac" opacity="0.65" />
+
+      <circle cx="100" cy="300" r="28" fill="none" stroke="#4ade80" strokeWidth="2.8" />
+      <circle cx="100" cy="300" r="7" fill="#4ade80" opacity="0.82" />
+
+      <circle cx="300" cy="348" r="28" fill="none" stroke="#4ade80" strokeWidth="2.8" />
+      <circle cx="300" cy="348" r="7" fill="#4ade80" opacity="0.82" />
+
+      <circle cx="500" cy="300" r="28" fill="none" stroke="#4ade80" strokeWidth="2.8" />
+      <circle cx="500" cy="300" r="7" fill="#4ade80" opacity="0.82" />
+
+      <rect x="446" y="44" width="32" height="26" rx="6" stroke="#86efac" strokeWidth="2.2" />
+      <path
+        d="M453 54 L453 43 Q453 34 461 34 Q469 34 469 43 L469 54"
+        stroke="#86efac"
+        strokeWidth="2.2"
+      />
+      <circle cx="462" cy="66" r="3.5" fill="#86efac" />
+
+      <rect x="46" y="44" width="26" height="32" rx="4" stroke="#86efac" strokeWidth="2.2" />
+      <line x1="53" y1="55" x2="65" y2="55" stroke="#86efac" strokeWidth="2" />
+      <line x1="53" y1="62" x2="65" y2="62" stroke="#86efac" strokeWidth="2" />
+      <line x1="53" y1="69" x2="62" y2="69" stroke="#86efac" strokeWidth="2" />
+
+      <path d="M75 62 L93 62" stroke="#22c55e" strokeWidth="2" markerEnd="url(#illus-no-account-arrow)" />
+      <defs>
+        <marker id="illus-no-account-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#22c55e" />
+        </marker>
+      </defs>
     </svg>
   );
 }
