@@ -1,0 +1,19 @@
+/* NProgress, (c) 2013, 2014 Rico Sta. Cruz - http://ricostacruz.com/nprogress
+ * @license MIT */
+
+/*! medium-zoom 1.1.0 | MIT License | https://github.com/francoischalifour/medium-zoom */
+
+/**
+ * @license lucide-react v1.14.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+/**!
+ * FlexSearch.js v0.7.41 (Bundle.module)
+ * Author and Copyright: Thomas Wilkerling
+ * Licence: Apache-2.0
+ * Hosted by Nextapps GmbH
+ * https://github.com/nextapps-de/flexsearch
+ */
