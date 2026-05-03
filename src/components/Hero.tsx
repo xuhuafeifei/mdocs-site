@@ -1,7 +1,7 @@
 import { BookOpen, Rocket } from 'lucide-react';
 import mdocsLogoUrl from '../assets/mdocs-logo.svg?url';
 
-const BASE = import.meta.env.BASE_URL || '/';
+const BASE = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
 
 interface HeroProps {
   beforeHero?: React.ReactNode;

@@ -1,5 +1,7 @@
 import { Rocket } from 'lucide-react';
 
+const BASE = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
+
 export function CTA() {
   return (
     <section
@@ -17,7 +19,7 @@ export function CTA() {
         免费、开源、无门槛
       </p>
       <div className="mdocs-cta-actions">
-        <a className="mdocs-btn mdocs-btn-primary" href="/docs/getting-started/installation">
+        <a className="mdocs-btn mdocs-btn-primary" href={`${BASE}docs/getting-started/installation`}
           <Rocket size={18} strokeWidth={2} aria-hidden />
           快速开始
         </a>
