@@ -23,7 +23,7 @@ export function FeatureSection() {
         <div className="mdocs-features-heading-wrap">
           <h2 className="mdocs-features-heading">为什么选择 mdocs</h2>
           <p className="mdocs-features-sub">
-            适合个人知识库与小型团队协作 — 代码于 GitHub 开放，持续迭代，欢迎共建。
+            轻量、私有、开箱即用 — 你的知识库，由你完全掌控。
           </p>
         </div>
 
@@ -42,8 +42,7 @@ export function FeatureSection() {
               </div>
             }
             title="纯私有化"
-            description="无需额外服务，SQLite + 本地文件即可运行，数据牢牢掌握在你手中。"
-            tags={['无 Redis', '无 MySQL', '无 S3']}
+            description="SQLite + 本地文件，零依赖，数据完全在你手中。"
             learnMore="/docs/deployment/requirements"
             delay={0}
           />
@@ -55,9 +54,8 @@ export function FeatureSection() {
                 <Pen size={24} strokeWidth={2} />
               </div>
             }
-            title="Markdown 原生 · 可视化"
-            description="完整 Markdown 语法支持，富文本工具栏 + 拖拽生成流程图，图表以纯文本存储在 .md 中"
-            tags={['流程图', '表格', '代码块', '所见即所得']}
+            title="Markdown 原生"
+            description="完整语法支持，拖拽生成图表，所见即所得。"
             learnMore="/docs/usage/markdown"
             delay={0.1}
           />
@@ -69,9 +67,8 @@ export function FeatureSection() {
                 <Mail size={24} strokeWidth={2} />
               </div>
             }
-            title="无账户 · 灵活协作"
-            description="无需账号：分享链接即可协作，结合域隔离与文档级邀请，权限精细可控。"
-            tags={['无需注册', '邀请链接', '权限可控']}
+            title="无账户协作"
+            description="分享链接即可协作，权限精细可控，无需注册。"
             learnMore="/docs/core-concepts/invitation"
             delay={0.2}
           />
@@ -84,8 +81,7 @@ export function FeatureSection() {
               </div>
             }
             title="草稿永不丢"
-            description="编辑自动写入本地，空闲时静默同步服务端，断网、误关、崩溃，打开即恢复"
-            tags={['自动保存', '离线可用', '版本安心']}
+            description="自动保存，离线可用，断网崩溃也不丢数据。"
             learnMore="/docs/usage/drafts"
             delay={0.3}
           />

@@ -5,12 +5,11 @@ interface FeatureCardProps {
   icon: ReactNode;
   title: string;
   description: string;
-  tags: string[];
   learnMore: string;
   delay: number;
 }
 
-export function FeatureCard({ icon, title, description, tags, learnMore, delay }: FeatureCardProps) {
+export function FeatureCard({ icon, title, description, learnMore, delay }: FeatureCardProps) {
   return (
     <div
       className="feature-card"
@@ -75,37 +74,10 @@ export function FeatureCard({ icon, title, description, tags, learnMore, delay }
         </p>
       </div>
 
-      <div>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '6px',
-            marginBottom: '12px',
-          }}
-        >
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              style={{
-                fontSize: '0.75rem',
-                color: '#166534',
-                background: '#ecfdf5',
-                borderRadius: '16px',
-                padding: '4px 10px',
-                fontWeight: 500,
-              }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <a href={learnMore} className="mdocs-learn-more">
-          查看详情
-          <ChevronRight className="mdocs-learn-more-icon" size={20} strokeWidth={2.5} aria-hidden />
-        </a>
-      </div>
+      <a href={learnMore} className="mdocs-learn-more">
+        了解更多
+        <ChevronRight className="mdocs-learn-more-icon" size={20} strokeWidth={2.5} aria-hidden />
+      </a>
 
       <style>{`
         @keyframes featureFadeIn {

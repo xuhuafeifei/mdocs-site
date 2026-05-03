@@ -1,6 +1,43 @@
 import { Layout as DefaultLayout } from 'rspress/theme';
 import { GITHUB_ISSUES, GITHUB_REPO, LICENSE_URL } from '../src/constants';
 
+interface FooterLink {
+  text: string;
+  href: string;
+  external?: boolean;
+}
+
+function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
+  return (
+    <div>
+      <div
+        style={{
+          fontSize: '0.8125rem',
+          fontWeight: 600,
+          color: '#374151',
+          marginBottom: '8px',
+          letterSpacing: '0.03em',
+        }}
+      >
+        {title}
+      </div>
+      <nav style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+        {links.map((link) => (
+          <a
+            key={link.text}
+            href={link.href}
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noopener noreferrer' : undefined}
+            style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'none' }}
+          >
+            {link.text}
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
+}
+
 function Footer() {
   const base = import.meta.env.BASE_URL;
 
@@ -58,48 +95,32 @@ function Footer() {
           </a>
         </div>
 
-        <div>
-          <div
-            style={{
-              fontSize: '0.875rem',
-              fontWeight: 600,
-              color: '#374151',
-              marginBottom: '8px',
-            }}
-          >
-            链接
-          </div>
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-            <a
-              href={`${base}docs/`}
-              style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'none' }}
-            >
-              文档
-            </a>
-            <a
-              href={GITHUB_REPO}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'none' }}
-            >
-              GitHub
-            </a>
-            <a
-              href={`${base}docs/changelog`}
-              style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'none' }}
-            >
-              更新日志
-            </a>
-            <a
-              href={GITHUB_ISSUES}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'none' }}
-            >
-              问题反馈
-            </a>
-          </nav>
-        </div>
+        {/* 产品 */}
+        <FooterColumn
+          title="产品"
+          links={[
+            { text: '功能特性', href: `${base}#features` },
+            { text: '更新日志', href: `${base}docs/changelog` },
+          ]}
+        />
+
+        {/* 资源 */}
+        <FooterColumn
+          title="资源"
+          links={[
+            { text: '文档', href: `${base}docs/` },
+            { text: '安装指南', href: `${base}docs/getting-started/installation` },
+          ]}
+        />
+
+        {/* 社区 */}
+        <FooterColumn
+          title="社区"
+          links={[
+            { text: 'GitHub', href: GITHUB_REPO, external: true },
+            { text: '问题反馈', href: GITHUB_ISSUES, external: true },
+          ]}
+        />
 
         <div>
           <a
