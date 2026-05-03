@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 
 function IllusZeroDependency() {
   return (
-    <svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="零依赖部署示意图">
+    <svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="本地数据与无外置中间件示意图">
       <rect x="16" y="60" width="64" height="80" rx="8" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
       <ellipse cx="48" cy="60" rx="32" ry="10" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
       <text x="48" y="105" textAnchor="middle" fontSize="11" fill="#1c7a40" fontWeight="600">SQLite</text>
@@ -59,7 +59,6 @@ function IllusDualEditing() {
       <rect x="270" y="132" width="100" height="14" rx="7" fill="#ebf9f0" stroke="#a5e7bc" strokeWidth="1" />
       <rect x="280" y="156" width="80" height="14" rx="7" fill="#d0f0e0" stroke="#a5e7bc" strokeWidth="1" />
       <rect x="275" y="178" width="60" height="14" rx="7" fill="#ebf9f0" stroke="#a5e7bc" strokeWidth="1" />
-      <rect x="300" y="90" width="80" height="12" rx="6" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5" />
       <rect x="300" y="110" width="70" height="3" rx="1" fill="#e5e7eb" />
       <rect x="300" y="118" width="56" height="3" rx="1" fill="#e5e7eb" />
     </svg>
@@ -135,8 +134,9 @@ interface ModuleData {
 
 const modules: ModuleData[] = [
   {
-    title: '零依赖部署',
-    subtitle: 'SQLite + 文件系统驱动，无需任何数据库、缓存或消息队列中间件。单文件即可运行，部署极简，维护零成本。',
+    title: '本地数据',
+    subtitle:
+      'SQLite + 本地文件就地承接状态，无需外部的数据库、缓存或消息队列。单文件即可运行，部署极简，维护零成本。',
     tags: ['一键启动'],
     illustration: <IllusZeroDependency />,
     tagBg: '#e8f5e9',
@@ -145,7 +145,7 @@ const modules: ModuleData[] = [
   {
     title: '双模编辑体验',
     subtitle: '完整的 Markdown 语法支持 + 可视化富文本工具栏。拖拽生成流程图和图表，所有内容以纯文本存储在 .md 文件中，版本控制友好。',
-    tags: ['所见即所得'],
+    tags: ['所见即所得', '可拖拽流程图'],
     illustration: <IllusDualEditing />,
     tagBg: '#fff8e1',
     tagColor: '#ff8f00',
