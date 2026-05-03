@@ -2,7 +2,7 @@ import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
   root: 'docs',
-  base: '/mdocs-site/',
+  base: process.env.BASE_URL || '/',
   lang: 'zh-CN',
   title: 'mdocs',
   description: '开源 Markdown 知识库 · 纯私有化 · 无账户协作',
