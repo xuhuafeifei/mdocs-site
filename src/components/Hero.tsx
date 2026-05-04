@@ -40,13 +40,25 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
         mdocs
       </p>
 
+      <p
+        style={{
+          fontSize: '0.9375rem',
+          fontWeight: 600,
+          color: '#2ba357',
+          margin: '0 0 16px',
+          letterSpacing: '0.04em',
+        }}
+      >
+        年轻团队首选的知识文档平台
+      </p>
+
       <h1 className="mdocs-hero-title">自由书写，一字不落</h1>
 
       <p className="mdocs-hero-subtitle-en">Write freely. Never lose a word.</p>
 
       <p
         style={{
-          fontSize: '1.0625rem',
+          fontSize: '1rem',
           color: '#3d6b52',
           margin: '0 0 32px',
           lineHeight: 1.6,
@@ -55,7 +67,7 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
           marginRight: 'auto',
         }}
       >
-        你的数据，你做主。无需服务器，无需注册，打开即写。
+        无需注册 · 打开即写
       </p>
 
       <div className="mdocs-hero-actions">

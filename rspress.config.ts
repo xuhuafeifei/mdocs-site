@@ -36,6 +36,7 @@ export default defineConfig({
         {
           text: '核心概念',
           items: [
+            { text: '所见皆文件', link: '/docs/core-concepts/all-files' },
             { text: '域隔离', link: '/docs/core-concepts/domain' },
             { text: '文档级邀请', link: '/docs/core-concepts/invitation' },
             {
