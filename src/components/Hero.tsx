@@ -49,10 +49,39 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
           letterSpacing: '0.04em',
         }}
       >
-        年轻团队首选的知识文档平台
+        为个人开发者与小团队打造的极简知识中枢
       </p>
 
       <h1 className="mdocs-hero-title">自由书写，一字不落</h1>
+
+      <p
+        style={{
+          fontSize: '0.875rem',
+          color: '#4b9e6b',
+          margin: '0 0 12px',
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '8px',
+          flexWrap: 'wrap',
+        }}
+      >
+        {['零依赖部署', '双模编辑', '无账户协作', '智能草稿'].map((tag) => (
+          <span
+            key={tag}
+            style={{
+              background: '#ebf9f0',
+              color: '#1c7a40',
+              borderRadius: '16px',
+              padding: '4px 14px',
+              fontSize: '0.8125rem',
+              fontWeight: 500,
+              border: '1px solid #d0f0e0',
+            }}
+          >
+            {tag}
+          </span>
+        ))}
+      </p>
 
       <p className="mdocs-hero-subtitle-en">Write freely. Never lose a word.</p>
 
@@ -74,11 +103,11 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
         {beforeHeroActions}
         <a className="mdocs-btn mdocs-btn-primary" href={`${BASE}docs/getting-started/installation`}>
           <Rocket size={18} strokeWidth={2} aria-hidden />
-          快速开始
+          立即体验 · 无需注册
         </a>
         <a className="mdocs-btn mdocs-btn-secondary" href={`${BASE}docs/`}>
           <BookOpen size={18} strokeWidth={2} aria-hidden />
-          查看文档
+          了解技术原理
         </a>
         {afterHeroActions}
       </div>

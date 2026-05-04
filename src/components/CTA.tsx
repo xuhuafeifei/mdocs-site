@@ -13,10 +13,10 @@ export function CTA() {
       }}
     >
       <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#14532d', margin: '0 0 8px' }}>
-        准备好开始了吗？
+        别再等待，现在就开始自由书写
       </h2>
       <p style={{ fontSize: '1rem', color: '#4b5563', margin: '0 0 28px', lineHeight: 1.5 }}>
-        免费、开源、无门槛
+        免费使用 · 开源可控 · 5分钟部署 · 无需注册
       </p>
       <div className="mdocs-cta-actions">
         <a
@@ -24,7 +24,7 @@ export function CTA() {
           href={`${BASE}docs/getting-started/installation`}
         >
           <Rocket size={18} strokeWidth={2} aria-hidden />
-          快速开始
+          立即创建我的知识库
         </a>
       </div>
     </section>

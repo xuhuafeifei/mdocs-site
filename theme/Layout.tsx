@@ -100,6 +100,7 @@ function Footer() {
           title="产品"
           links={[
             { text: '功能特性', href: `${base}#features` },
+            { text: '竞品对比', href: `${base}docs/why-mdocs` },
             { text: '更新日志', href: `${base}docs/changelog` },
           ]}
         />
@@ -150,7 +151,7 @@ function Footer() {
           lineHeight: 1.6,
         }}
       >
-        &copy; 2026 mdocs &middot; Made with &hearts; by{' '}
+        &copy; {new Date().getFullYear()} mdocs &middot; Made with &hearts; by{' '}
         <a
           href="https://github.com/xuhuafeifei"
           target="_blank"
