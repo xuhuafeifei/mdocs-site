@@ -39,13 +39,9 @@ mdocs 的编辑器基于 Lexical（Meta 开源的富文本引擎），配合 `@l
 
 ### 流程图
 
-支持`mermaid`语法，输入
-```
-```mermaid
-```
-回车即可出现mermaid代码块，输入相应正确语法即可渲染mermaid图
+支持 **Meta2d** 流程图，输入 `---meta2d---` 后回车即可打开画布编辑器，拖拽绘制流程图。
 
-见[流程图生成](./flowchart.md)。
+详见[流程图生成](./flowchart.md)。
 
 ## 设计取舍
 

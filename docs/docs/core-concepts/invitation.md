@@ -23,7 +23,8 @@
 
 1. **基于访客 ID，而非邮箱**：mdocs 没有用户账户系统，所以邀请的载体是访客 ID——每个浏览器注册后获得的唯一标识
 2. **文档级粒度**：不是整个域或整个项目，而是单篇文档。适合「这篇文档需要给某人看一下」的场景
-3. **所有者和受邀者的关系在数据库中存储**：
+3. **与档位解耦**：邀请不是权限档位——它独立于文档的五级权限（0～4）之上。任何档位的文档都可以叠加 invite，不受限制
+4. **所有者和受邀者的关系在数据库中存储**：
 
 ```
 document_invites 表
@@ -36,16 +37,16 @@ document_invites 表
 
 ## 与域成员互斥
 
-一个重要的约束：**已是某文档所在域的域成员 → 禁止再对该文档创建 invite**。
+一条重要约束：**已是某域成员的人，不能再被该域内文档邀请**。域成员已经拥有域内文档的读/写权限（取决于档位），invite 是给**域外人员**的通道。
 
-这是因为：
-- 在 **restricted 域**中，成员已经拥有 `domain_read` / `domain_write` 权限，invite 是给**非成员**的通道
-- 在 **private 域**中，域成员仅有域主一人——对自己的文档无需 invite
+- **restricted 域**：域成员直接走 `domain_read(1)` / `domain_write(2)` 档位语义，不需要也不应该被 invite
+- **private 域**：域内仅有域主一人，实际效果相同——无法 invite 域主
+- **public 域**：public 域没有域成员概念，invite 不会因此被拦截
 
-## 各域类型中的 invite 角色
+## invite 在各域类型中的角色
 
 | 域类型 | invite 的作用 |
 |--------|-------------|
-| **public** | 对非 owner 补充写权限（`public_read` 档文档默认仅 owner 可写） |
-| **restricted** | 非成员的主要访问通道（域内无 public 档） |
-| **private** | 圈外人能否访问取决于文件档位 + invite 叠加 |
+| **public** | 对非 owner 补充写权限（`public_read(3)` 档文档默认仅 owner 可写）；`public_write(4)` 档下用不到 invite |
+| **restricted** | 非域成员通过 invite 获得**某篇文档**的读/写能力，同时在服务端呈现「经文档邀请」的域入口（不足以在域内任意新建文档；在域内随意创建内容需成为 `domain_members` 成员） |
+| **private** | 非 owner 能否访问取决于文件档位 + invite 叠加。例如 `private(0)` 档文档，非 owner 只能通过 invite 进入 |

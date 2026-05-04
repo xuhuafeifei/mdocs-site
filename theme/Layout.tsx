@@ -1,4 +1,5 @@
 import { Layout as DefaultLayout } from 'rspress/theme';
+import { usePageData } from 'rspress/runtime';
 import { GITHUB_ISSUES, GITHUB_REPO, LICENSE_URL } from '../src/constants';
 
 interface FooterLink {
@@ -166,5 +167,9 @@ function Footer() {
 }
 
 export function Layout(props: any) {
+  const { page } = usePageData();
+  if (page.type === 'doc') {
+    return <DefaultLayout {...props} />;
+  }
   return <DefaultLayout {...props} bottom={<Footer />} />;
 }

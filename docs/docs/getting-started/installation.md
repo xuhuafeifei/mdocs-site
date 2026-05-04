@@ -43,7 +43,7 @@ pnpm start          # 生产模式，同一端口提供前端和 API
   logs/               # 运行日志
 ```
 
-文档以 **Lexical JSON** 格式存储在 `files/docs/` 中，只能由 mdocs 加载编辑。未来会提供导出为 Markdown 的功能。
+文档以 Lexical JSON 格式存储在 `files/docs/` 中，只能由 mdocs 加载编辑。
 
 ## 验证
 

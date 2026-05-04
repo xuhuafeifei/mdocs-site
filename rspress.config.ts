@@ -51,6 +51,10 @@ export default defineConfig({
             { text: 'Markdown 编辑', link: '/docs/usage/markdown' },
             { text: '流程图生成', link: '/docs/usage/flowchart' },
             { text: '草稿与同步', link: '/docs/usage/drafts' },
+            {
+              text: '受限域成员与模板',
+              link: '/docs/usage/domain-members',
+            },
           ],
         },
         {

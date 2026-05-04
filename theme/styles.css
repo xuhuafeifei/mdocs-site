@@ -284,13 +284,31 @@ tbody tr:hover {
   border: 1px solid #d0f0e0 !important;
 }
 
-/* Scrollbar */
+/* Scrollbar — thin, hidden by default, green on hover */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
 ::-webkit-scrollbar-thumb {
-  background: #a5e7bc !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 3px !important;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f9fafb !important;
+  background: transparent !important;
+}
+
+/* Show green scrollbar thumb when hovering the scrollable container */
+:hover::-webkit-scrollbar-thumb {
+  background: #a5e7bc !important;
+}
+
+/* Outline (right-side TOC) — keep fixed */
+.rspress-doc-layout aside,
+[class*="aside-container"] {
+  align-self: flex-start !important;
 }
 
 /* Nav bar */

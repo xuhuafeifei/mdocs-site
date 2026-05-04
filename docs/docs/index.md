@@ -18,6 +18,7 @@
 - [编辑体验](./usage/markdown.md)——富文本编辑，Markdown 存储
 - [流程图生成](./usage/flowchart.md)——拖拽绘制，嵌入文档
 - [草稿与同步](./usage/drafts.md)——本地优先，按需发布
+- [受限域成员与名单模板](./usage/domain-members.md)——团队域邀人、复用成员名单
 
 ## 部署运维
 
