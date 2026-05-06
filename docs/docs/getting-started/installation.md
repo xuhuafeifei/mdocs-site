@@ -38,7 +38,11 @@ pnpm start          # 生产模式，同一端口提供前端和 API
   sqlite/
     data.sqlite       # 元数据（文档索引、权限、访客、审计日志）
   files/
-    docs/             # 文档 JSON 文件
+    docs/
+      {domain_id}/    # 每个域独立的子目录
+        a.md          # 域内文档
+        folder/       # 域内子目录（逻辑存在于数据库）
+          b.md
     assets/           # 上传的附件
   logs/               # 运行日志
 ```

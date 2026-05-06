@@ -25,7 +25,9 @@
   sqlite/
     data.sqlite       # 元数据（文档索引、访客、权限、审计日志）
   files/
-    docs/             # 文档 JSON 文件（Lexical JSON 格式）
+    docs/
+      {domain_id}/    # 每个域独立的子目录
+        a.md          # 域内文档（Lexical JSON 格式）
     assets/           # 上传的附件
   logs/               # 运行日志（按日期轮转）
 ```
