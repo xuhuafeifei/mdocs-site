@@ -55,6 +55,7 @@ export default defineConfig({
               text: '受限域成员与模板',
               link: '/docs/usage/domain-members',
             },
+            { text: 'CLI Token', link: '/docs/usage/cli-token' },
           ],
         },
         {

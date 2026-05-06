@@ -1,5 +1,10 @@
 # 更新日志
 
+## v0.4.0
+
+- **CLI Token**：新增命令行身份令牌，可在设置页创建/重置，支持 `x-cli-token` 认证头，继承访客所有权限
+- **ConfirmDialog 组件**：通用确认弹窗，替代原生 `window.confirm`
+
 ## v0.3.0
 
 - **显式目录模型**：引入 `file_type`（`'dir'` / `'md'`）和 `parent_id`，目录不再是路径切割的产物
