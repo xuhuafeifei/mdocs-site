@@ -19,6 +19,33 @@ mdocs 的编辑器基于 Lexical（Meta 开源的富文本引擎），配合 `@l
 - 文档以 Lexical JSON 格式持久化，保留全部语义信息，重新打开时精确恢复
 - 由于是自有格式，文档**只能由 mdocs 加载**（未来会提供导出 Markdown 功能）
 
+## Markdown 导入
+
+mdocs 支持直接粘贴或通过 API 传入 Markdown 文本，后端会自动转换为 Lexical JSON 存储。
+
+### 粘贴 Markdown
+
+在编辑器中直接粘贴（`Ctrl+V`）Markdown 文本，内容会按富文本格式渲染，保留标题、粗体、列表、表格、代码块等结构。
+
+### API / CLI 传入 Markdown
+
+通过 API 或命令行客户端创建/更新文档时，传入的 Markdown 内容会自动转换：
+
+```bash
+# CLI 创建文档，直接传 Markdown
+node ~/.mdocs-cli/mdocs.mjs create \
+  --name "笔记.md" \
+  --content "# 标题\n\n这是**粗体**和*斜体*"
+```
+
+转换能力包括：
+- 标题 h1-h6、段落、换行
+- 粗体/斜体/删除线/行内代码/超链接
+- 有序/无序列表（支持嵌套）
+- 代码块（保留语言标识）
+- 引用块、分隔线
+- 表格（含表头、合并单元格）
+
 ## 编辑器功能
 
 ### 富文本工具栏

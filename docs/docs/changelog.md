@@ -1,5 +1,12 @@
 # 更新日志
 
+## v0.5.0
+
+- **全文搜索**：新增 FTS5 搜索引擎，支持中文分词（jieba），在搜索框输入关键词即可按 BM25 相关性排序检索全库文档
+- **后端 Markdown 转 Lexical**：编辑器和 API 支持直接传入 Markdown 文本，后端自动转换为 Lexical JSON 存储。CLI 客户端 `create` / `update` 默认使用 `contentFormat: 'markdown'`
+- **域切换持久化**：刷新页面后域选择不丢失，自动恢复到上次浏览的域
+- **mdocs-cli 命令行客户端**：新增独立 CLI 工具仓库 `https://github.com/xuhuafeifei/mdocs-cli`，提供 `search`、`get`、`create`、`update`、`domains`、`mkdir` 六个命令，Token 在设置页创建
+
 ## v0.4.0
 
 - **CLI Token**：新增命令行身份令牌，可在设置页创建/重置，支持 `x-cli-token` 认证头，继承访客所有权限
