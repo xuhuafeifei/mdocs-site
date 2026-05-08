@@ -3,6 +3,9 @@ import { defineConfig } from 'rspress/config';
 export default defineConfig({
   root: 'docs',
   base: process.env.BASE_URL || '/',
+  search: {
+    searchHooks: require.resolve('./theme/search-hooks.ts'),
+  },
   lang: 'zh-CN',
   title: 'mdocs-site',
   description: '开源 Markdown 知识库 · 纯私有化 · 无账户协作',
