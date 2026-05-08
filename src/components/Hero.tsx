@@ -1,4 +1,5 @@
-import { BookOpen, Rocket } from 'lucide-react';
+import { useState } from 'react';
+import { BookOpen, Rocket, X } from 'lucide-react';
 import mdocsLogoUrl from '../assets/mdocs-logo.svg?url';
 
 const BASE = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
@@ -10,7 +11,110 @@ interface HeroProps {
   afterHeroActions?: React.ReactNode;
 }
 
+const DEMO_URL = 'https://xuhuafeifei.github.io/mdocs/';
+
+function DemoModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'rgba(0,0,0,0.4)',
+        padding: '16px',
+      }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div
+        style={{
+          background: '#fff',
+          borderRadius: '16px',
+          padding: '32px',
+          maxWidth: '420px',
+          width: '100%',
+          position: 'relative',
+          boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
+        }}
+      >
+        <button
+          onClick={onClose}
+          style={{
+            position: 'absolute',
+            top: '12px',
+            right: '12px',
+            border: 'none',
+            background: 'transparent',
+            cursor: 'pointer',
+            padding: '4px',
+            color: '#9ca3af',
+          }}
+        >
+          <X size={20} />
+        </button>
+
+        <div style={{ textAlign: 'center' }}>
+          <div
+            style={{
+              fontSize: '2rem',
+              marginBottom: '12px',
+            }}
+          >
+            🎮
+          </div>
+          <h2
+            style={{
+              fontSize: '1.125rem',
+              fontWeight: 700,
+              color: '#1f2937',
+              margin: '0 0 8px',
+            }}
+          >
+            进入 Demo 体验
+          </h2>
+          <p
+            style={{
+              fontSize: '0.875rem',
+              color: '#6b7280',
+              lineHeight: 1.6,
+              margin: '0 0 24px',
+            }}
+          >
+            您将进入 Demo 界面。部分功能将受到限制，且数据都存储在您的浏览器中。
+          </p>
+          <a
+            href={DEMO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: '#2ba357',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '10px',
+              padding: '12px 28px',
+              fontSize: '0.9375rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              textDecoration: 'none',
+            }}
+          >
+            <Rocket size={18} />
+            确定进入 Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroActions }: HeroProps) {
+  const [showDemoModal, setShowDemoModal] = useState(false);
+
   return (
     <section
       style={{
@@ -19,6 +123,8 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
         textAlign: 'center',
       }}
     >
+      {showDemoModal && <DemoModal onClose={() => setShowDemoModal(false)} />}
+
       {beforeHero}
 
       <img
@@ -101,10 +207,10 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
 
       <div className="mdocs-hero-actions">
         {beforeHeroActions}
-        <a className="mdocs-btn mdocs-btn-primary" href={`${BASE}docs/getting-started/installation`}>
+        <button className="mdocs-btn mdocs-btn-primary" onClick={() => setShowDemoModal(true)}>
           <Rocket size={18} strokeWidth={2} aria-hidden />
           立即体验 · 无需注册
-        </a>
+        </button>
         <a className="mdocs-btn mdocs-btn-secondary" href={`${BASE}docs/`}>
           <BookOpen size={18} strokeWidth={2} aria-hidden />
           了解技术原理
