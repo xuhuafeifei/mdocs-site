@@ -56,6 +56,7 @@ export default defineConfig({
               link: '/docs/usage/domain-members',
             },
             { text: 'CLI Token', link: '/docs/usage/cli-token' },
+            { text: '恢复码与身份找回', link: '/docs/usage/recovery-code' },
           ],
         },
         {
