@@ -486,6 +486,39 @@ function IllusDrafts() {
   );
 }
 
+function IllusCliAgent() {
+  return (
+    <svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="CLI 与 Agent 接入示意图">
+      <rect x="20" y="40" width="130" height="120" rx="8" fill="#f9fafb" stroke="#2ba357" strokeWidth="2" />
+      <rect x="20" y="40" width="130" height="24" rx="8" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
+      <circle cx="36" cy="52" r="4" fill="#f87171" />
+      <circle cx="48" cy="52" r="4" fill="#fbbf24" />
+      <circle cx="60" cy="52" r="4" fill="#3ccd6e" />
+      <rect x="44" y="78" width="80" height="4" rx="2" fill="#a5e7bc" />
+      <rect x="32" y="94" width="70" height="4" rx="2" fill="#e5e7eb" />
+      <rect x="32" y="110" width="90" height="4" rx="2" fill="#e5e7eb" />
+      <rect x="32" y="126" width="60" height="4" rx="2" fill="#e5e7eb" />
+      <rect x="32" y="142" width="76" height="4" rx="2" fill="#e5e7eb" />
+      <path d="M165 100 L205 100" stroke="#3ccd6e" strokeWidth="2" strokeLinecap="round" markerEnd="url(#arrowCliAgent)" />
+      <defs>
+        <marker id="arrowCliAgent" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+          <path d="M0 0 L6 3 L0 6 Z" fill="#3ccd6e" />
+        </marker>
+      </defs>
+      <rect x="220" y="50" width="80" height="100" rx="12" fill="#ebf9f0" stroke="#2ba357" strokeWidth="2" />
+      <rect x="240" y="70" width="40" height="28" rx="6" fill="#fff" stroke="#a5e7bc" strokeWidth="1.5" />
+      <circle cx="254" cy="84" r="4" fill="#2ba357" />
+      <circle cx="266" cy="84" r="4" fill="#2ba357" />
+      <rect x="250" y="94" width="20" height="3" rx="1.5" fill="#a5e7bc" />
+      <line x1="260" y1="50" x2="260" y2="38" stroke="#2ba357" strokeWidth="2" />
+      <circle cx="260" cy="34" r="4" fill="#3ccd6e" />
+      <rect x="240" y="110" width="44" height="5" rx="2.5" fill="#d0f0e0" />
+      <rect x="240" y="122" width="32" height="5" rx="2.5" fill="#d0f0e0" />
+      <rect x="240" y="134" width="38" height="5" rx="2.5" fill="#d0f0e0" />
+    </svg>
+  );
+}
+
 /* ===== Data ===== */
 
 interface ModuleData {
@@ -523,6 +556,12 @@ const modules: ModuleData[] = [
       "编辑内容自动保存至本地，网络空闲时同步到后端。支持手动/自动切换，断网不丢数据",
     tags: ["自动保存", "断网不丢数据"],
     illustration: <IllusDrafts />,
+  },
+  {
+    title: 'CLI 与 Agent 原生接入',
+    subtitle: '独立 CLI 客户端 + Token 认证，支持命令行批量管理文档、CI/CD 流水线集成，以及 AI Agent（如 Claude Code）直接读写知识库。',
+    tags: ['CLI 工具', 'Agent Ready'],
+    illustration: <IllusCliAgent />,
   },
 ];
 
@@ -691,6 +730,7 @@ export function WhyMdocsPage() {
       <FeatureModule data={modules[1]} imageRight={false} />
       <FeatureModule data={modules[2]} imageRight />
       <FeatureModule data={modules[3]} imageRight={false} />
+      <FeatureModule data={modules[4]} imageRight />
     </div>
   );
 }

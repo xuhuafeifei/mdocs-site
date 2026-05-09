@@ -171,7 +171,7 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
           flexWrap: 'wrap',
         }}
       >
-        {['零依赖部署', '双模编辑', '无账户协作', '智能草稿'].map((tag) => (
+        {['零依赖部署', '双模编辑', '无账户协作', '智能草稿', 'Agent Ready'].map((tag) => (
           <span
             key={tag}
             style={{
