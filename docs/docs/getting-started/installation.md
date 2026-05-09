@@ -58,8 +58,14 @@ pnpm start          # 生产模式，同一端口提供前端和 API
 # 列出所有访客
 mdocs visitor list
 
-# 访客迁移
+# 访客迁移（按名称，推荐）
+mdocs visitor migrate --from Alice --to Bob --confirm
+
+# 访客迁移（按 UUID，精确匹配）
 mdocs visitor migrate --from OLD_UUID --to NEW_UUID --confirm
+
+# 试运行，查看影响范围但不实际执行
+mdocs visitor migrate --from Alice --to Bob --dry-run
 
 # 显式启动服务
 mdocs start
@@ -88,6 +94,16 @@ mdocs start
 ## 验证
 
 启动后访问 `http://localhost:4000`（npm 安装）或 `http://localhost:5173`（开发模式），看到访客注册弹窗即表示运行成功。
+
+## 升级
+
+通过 npm 安装的版本，直接重新安装即可升级：
+
+```bash
+npm install -g @fgbg/mdocs@latest
+```
+
+升级后重启服务即可。
 
 ## 下一步
 
