@@ -30,10 +30,24 @@
 如果浏览器缓存被清除，用户会获得一个新访客 ID。服务部署者可以通过 CLI 命令, 登录部署服务器将旧身份合并到新身份：
 
 ```
-pnpm mdocs visitor migrate --from OLD_ID --to NEW_ID
+# 推荐：按访客名称迁移（更简单，名称可在侧边栏看到）
+pnpm mdocs visitor migrate --from Alice --to Bob --confirm
+
+# 也支持按 UUID 迁移（精确匹配）
+pnpm mdocs visitor migrate --from OLD_ID --to NEW_ID --confirm
+
+# 试运行，查看影响范围但不实际执行
+pnpm mdocs visitor migrate --from Alice --to Bob --dry-run
 ```
 
 该操作在事务内执行，更新文档所有权，禁用旧访客，并记录审计日志。
+
+### 查看所有访客
+
+```
+pnpm mdocs visitor list           # 默认只看启用的访客
+pnpm mdocs visitor list --all     # 看全部（含已禁用的）
+```
 
 ## 设计取舍
 
