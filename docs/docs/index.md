@@ -15,9 +15,13 @@
 
 ## 使用指南
 
+- [设置页面概览](./usage/settings.md)——集中配置中心
 - [编辑体验](./usage/markdown.md)——富文本编辑，Markdown 存储
 - [流程图生成](./usage/flowchart.md)——拖拽绘制，嵌入文档
 - [草稿与同步](./usage/drafts.md)——本地优先，按需发布
+- [我的文章与邀请](./usage/my-documents.md)——集中管理创作内容
+- [收藏功能](./usage/bookmarks.md)——快速标记重要文档
+- [文档评论](./usage/comments.md)——协作讨论与反馈
 - [受限域成员与名单模板](./usage/domain-members.md)——团队域邀人、复用成员名单
 
 ## 部署运维
