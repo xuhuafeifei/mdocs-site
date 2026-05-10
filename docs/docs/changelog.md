@@ -1,5 +1,14 @@
 # 更新日志
 
+## v0.6.4
+
+- **文档邀请成员**：编辑器工具栏文档信息菜单新增「邀请成员」入口，可邀请访客以只读或编辑权限协作文档
+- **邀请权限选择**：邀请弹窗中右侧已选成员列表新增 MiniSelect 下拉框，可为每个被邀请人独立设置「只读」/「可编辑」权限
+- **MiniSelect 组件**：新增紧凑型通用下拉组件，支持点击外部关闭、Escape 键、键盘可访问
+- **邀请编辑 Bug 修复**：修复了被邀请用户虽然能通过后端鉴权但前端编辑器仍以只读模式渲染的问题 — 后端 `getDocument()` 现在返回 `invitedEdit` 标记，前端 `canEdit` 计算补充 invite 检查
+- **后端权限修正**：`canEditDocument()` 在 private 域各权限档位下补充 `document_invites` 检查，被 invite edit 的非创建者现在可正常编辑
+- **10 条新增单测**：覆盖 invite read/edit 跨所有权限档位（private/domain_read/domain_write/public_read/public_write）
+
 ## v0.6.3
 
 - **文档信息菜单**：编辑器工具栏新增三条线菜单按钮，可查看文档元信息（创建者、创建时间、大小、上次编辑），支持快速收藏/取消收藏
