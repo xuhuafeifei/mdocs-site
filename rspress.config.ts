@@ -51,10 +51,13 @@ export default defineConfig({
         {
           text: '使用指南',
           items: [
+            { text: '设置页面概览', link: '/docs/usage/settings' },
             { text: 'Markdown 编辑', link: '/docs/usage/markdown' },
             { text: '流程图生成', link: '/docs/usage/flowchart' },
             { text: '草稿与同步', link: '/docs/usage/drafts' },
+            { text: '我的文章与邀请', link: '/docs/usage/my-documents' },
             { text: '文档收藏', link: '/docs/usage/bookmarks' },
+            { text: '文档评论', link: '/docs/usage/comments' },
             {
               text: '受限域成员与模板',
               link: '/docs/usage/domain-members',
