@@ -1,5 +1,13 @@
 # 更新日志
 
+## v0.6.7
+
+- **草稿发布失败恢复机制**：自动发布遇到服务端文档不存在（404）时，草稿不再静默丢失或无限循环报错，而是标记为发布失败状态并通知用户；用户可在草稿列表页点击「另存为新文档」，通过域选择器 + 目录树选择目标位置，将草稿内容作为全新文档重新发布
+- **修复 Lexical 编辑器内存泄漏**：修复切换文档时内存飙升至 40GB 的致命问题。根因为 `@lobehub/editor` 的 `ReactEditor` 组件创建编辑器实例后从不调用 `destroy()`，且 `DocumentEditor` 使用 `key` 强制重新挂载导致每次切换都泄漏一个完整的编辑器实例（含 CodeMirror、Meta2d Canvas、图片等 DecoratorNode 资源）。上游 `ReactEditor` 和 `useEditor()` hook 已增加 `destroy()` cleanup，mdocs 侧移除多余的 `key` 并增加防御性清理
+- **兼容 React StrictMode 的编辑器生命周期**：修复 StrictMode 开发环境下 `editor.destroy()` 后重新挂载导致 `DataSource for type "json" is not registered` 报错。采用 `pendingDestroyRef` + `queueMicrotask` 延迟取消模式：cleanup 中把 destroy 排队到 microtask，若紧接着是 StrictMode remount 则同步取消，真正卸载时才执行销毁
+- **批量修复异步组件卸载泄漏**：为 `CommentsPanel`、`SettingsPage`、`DraftListPage`、`RecoveryDialog`、`DocumentEditor` 的异步请求增加卸载保护。`CommentsPanel` 采用 `expectedDocumentIdRef` 竞态保护丢弃旧请求；其余组件采用 `mountedRef` 模式防止卸载后 `setState`
+- **浏览器资源泄漏清理**：修复 Playground 中 `URL.createObjectURL` 未 `revokeObjectURL` 的问题；修复 `actions.ts` 文件选择器在 Safari 中取消后 DOM 节点未移除的问题（增加 5s 兜底超时）；修复 Playground 卸载后 `window.editor` 和 debounce 定时器未清理的问题
+
 ## v0.6.6
 
 - **设置页面大改版**：重新组织设置导航，新增「我的收藏」和「我的文章」两个独立 Tab
