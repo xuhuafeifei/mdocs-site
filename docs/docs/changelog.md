@@ -3,9 +3,12 @@
 ## v0.6.9
 
 - **升级 @lobehub/editor 至 1.0.0-fork.6**，同步上游修复：
-  - **修复 Meta2d 弹窗按钮暗色模式不可见**：DiagramEditor 弹窗硬编码白底（`background: '#fff'`）但未重置文字颜色，在暗色主题下文字继承白色导致所有按钮（撤销/重做/删除/适应/100%/关闭）白底白字不可见。Save 按钮因显式设 `color: '#fff'` 蓝底白字是唯一可见的例外
-  - **Meta2d 流程图 SVG 预览导出稳定**：修复多 pen 场景下部分流程图导出为空的渲染链路异常
-  - **修复划词 ColorPicker 选色后跳回黑色**：选中文本后通过浮动工具栏设置颜色时面板立即跳回黑色，selection 为 null 时保留上次检测到的颜色值
+  - **修复 Meta2d 弹窗按钮暗色模式不可见**：DiagramEditor 弹窗硬编码 `background: '#fff'` 但未重置文字颜色，暗色主题下所有按钮（撤销/重做/删除/适应/100%/关闭）白底白字。加 `color: '#000'` 修复
+  - **Meta2d 流程图 SVG 预览导出稳定**：SVG 导出优先用当前编辑实例而非隐藏实例重放，修复多 pen 场景部分导出为空
+  - **修复划词 ColorPicker 选色后跳回黑色**：selection 为 null 时保留上次检测到的颜色值
+  - **Locale 深合并 + BlockImage 插入光标流**：
+    - `registerLocale()` 改为深合并，避免插件注册 `{codemirror:{...}}` 时覆盖已有 `meta2d.editor` 等嵌套 key
+    - BlockImageNode 通过 `---meta2d---` 或粘贴插入后，自动创建空白段落并定位光标，不再卡在图片后无法继续输入
 
 ## v0.6.8
 
