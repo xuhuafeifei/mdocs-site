@@ -1,5 +1,13 @@
 # 更新日志
 
+## v0.7.4
+
+- **从上游根本解决编辑器内容溢出问题**：升级 `@fgbg/lobe-editor` 至 `1.0.0-fork.9`
+  - **表格宽度溢出修复**：在 `.editor_table_scrollable_wrapper` 增加 `min-width: 0`，解决 flex 布局下宽表格撑开父容器的经典问题
+  - **图片宽度溢出修复**：在 `.image` / `.blockImage` 样式中增加 `img { max-width: 100% !important; }`，防止大图片横向撑开编辑器
+- **修复 Outline 大纲被挤出视野**：给 Editor + Outline 共享的外层 Block 增加 `minWidth: 0`，确保左侧目录树展开时，大纲不会被宽表格挤出视野
+- **保留 mdocs 侧补丁作为双重保险**：待上游稳定后可移除
+
 ## v0.7.3
 
 - **新增 Markmap 思维导图支持**：在 ` ```markmap ` 代码块中输入 Markdown 即可渲染为可交互思维导图
