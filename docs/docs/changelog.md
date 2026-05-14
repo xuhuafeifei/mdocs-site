@@ -7,6 +7,10 @@
   - **图片宽度溢出修复**：在 `.image` / `.blockImage` 样式中增加 `img { max-width: 100% !important; }`，防止大图片横向撑开编辑器
 - **修复 Outline 大纲被挤出视野**：给 Editor + Outline 共享的外层 Block 增加 `minWidth: 0`，确保左侧目录树展开时，大纲不会被宽表格挤出视野
 - **保留 mdocs 侧补丁作为双重保险**：待上游稳定后可移除
+- **升级 `@fgbg/lobe-editor` 至 `1.0.0-fork.10`**（仍属 v0.7.4 产品线，仅上游编辑器迭代；mdocs 应用包版本号未改）：
+  - **Markmap**：`---markmap---` 正确注册 `IMarkdownShortCutService`；嵌套 `textarea` 粘贴不再走主编辑器 Markdown 粘贴链路；预览区按钮可右下角
+  - **链接**：左键重复打开链接编辑浮层；⌘/Ctrl+单击或中键新标签打开；修复异步场景 `getLatest` 报错（改为 `read` + `$getNodeByKey`）；`EDIT_LINK_COMMAND` 移至 `LinkNode.ts`
+
 
 ## v0.7.3
 
