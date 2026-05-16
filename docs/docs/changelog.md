@@ -1,5 +1,13 @@
 # 更新日志
 
+## v0.7.5
+
+- **修复 Markdown 粘贴列表时 listItem 被错误拆分**：升级 `@fgbg/lobe-editor` 至 `1.0.0-fork.12`
+  - **根因**：`listItem` markdown reader 通过 `children.map()` 返回数组，解析器的 `.flat()` 将数组展平导致单个 list item 被拆成多个独立节点
+  - **症状**：粘贴 `1. **开关关闭时**：不查询果切任务` 时，有序列表被拆成两个 listItem（value=1 和 value=2）
+  - **修复**：reader 改为返回单个节点，嵌套列表和 paragraph children 正确合入同一个 listItem
+  - 详见 `fgbg-docs/references/listitem-parsing-bugfix.md`
+
 ## v0.7.4
 
 - **从上游根本解决编辑器内容溢出问题**：升级 `@fgbg/lobe-editor` 至 `1.0.0-fork.9`
@@ -8,7 +16,7 @@
 - **修复 Outline 大纲被挤出视野**：给 Editor + Outline 共享的外层 Block 增加 `minWidth: 0`，确保左侧目录树展开时，大纲不会被宽表格挤出视野
 - **保留 mdocs 侧补丁作为双重保险**：待上游稳定后可移除
 - **升级 `@fgbg/lobe-editor` 至 `1.0.0-fork.10`**（仍属 v0.7.4 产品线，仅上游编辑器迭代；mdocs 应用包版本号未改）：
-  - **Markmap**：`---markmap---` 正确注册 `IMarkdownShortCutService`；嵌套 `textarea` 粘贴不再走主编辑器 Markdown 粘贴链路；预览区按钮可右下角
+  - **Markmap**：`---markmap---` 正确注册 `IMarkdownShortCutService`；嵌套 `textarea` 粘贴不再走主编辑器 Markdown 粘贴链路；预览区按钮可右下角；**新增一键展开/折叠全部节点**，节点数超过 30 个时默认全部折叠；**修复左侧 markdown 编辑器无法全选问题**（`Cmd/Ctrl+A` 事件被 Lexical 全局拦截，需 `stopPropagation`）
   - **链接**：左键重复打开链接编辑浮层；⌘/Ctrl+单击或中键新标签打开；修复异步场景 `getLatest` 报错（改为 `read` + `$getNodeByKey`）；`EDIT_LINK_COMMAND` 移至 `LinkNode.ts`
 
 
