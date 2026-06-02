@@ -19,6 +19,7 @@
 - [编辑体验](./usage/markdown.md)——富文本编辑，Markdown 存储
 - [流程图生成](./usage/flowchart.md)——拖拽绘制，嵌入文档
 - [草稿与同步](./usage/drafts.md)——本地优先，按需发布
+- [版本冲突与合并](./usage/merge-conflicts.md)——409 时的三栏合并
 - [我的文章与邀请](./usage/my-documents.md)——集中管理创作内容
 - [收藏功能](./usage/bookmarks.md)——快速标记重要文档
 - [文档评论](./usage/comments.md)——协作讨论与反馈
