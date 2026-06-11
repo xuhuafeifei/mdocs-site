@@ -1,5 +1,9 @@
 # 更新日志
 
+## v0.8.0
+
+- **CLI 全局安装**：修复 `bin/mdocs.js` 无执行权限导致 `npm install -g` 后 `mdocs: Permission denied` 的问题
+
 ## v0.7.9
 
 - **前端文档状态重构（activeDocMeta）**：
