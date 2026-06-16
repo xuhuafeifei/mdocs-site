@@ -1,5 +1,9 @@
 # 更新日志
 
+## v0.8.1
+
+- **服务监听地址**：默认 `MDOCS_HOST` 从 `127.0.0.1` 改为 `0.0.0.0`，服务器部署后外网可直接访问（本地仅本机可设 `MDOCS_HOST=127.0.0.1`）
+
 ## v0.8.0
 
 - **CLI 全局安装**：修复 `bin/mdocs.js` 无执行权限导致 `npm install -g` 后 `mdocs: Permission denied` 的问题
