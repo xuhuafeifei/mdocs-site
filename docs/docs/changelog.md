@@ -1,5 +1,9 @@
 # 更新日志
 
+## v0.8.4
+
+- **前端体积**：升级 `@fgbg/lobe-editor@fork.13`，Shiki 语法高亮仅保留约 40 种常用语言（见下方列表），`dist/web` 资源文件减少；冷门语言代码块以纯文本显示，内容不丢失
+
 ## v0.8.3
 
 - **静态资源压缩**：Express 启用 gzip（`compression`），JS/CSS 等响应带 `Content-Encoding: gzip`，首屏传输量显著下降
