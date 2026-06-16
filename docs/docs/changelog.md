@@ -1,5 +1,10 @@
 # 更新日志
 
+## v0.8.3
+
+- **静态资源压缩**：Express 启用 gzip（`compression`），JS/CSS 等响应带 `Content-Encoding: gzip`，首屏传输量显著下降
+- **静态资源缓存**：`/assets/*`（带 hash 的文件）设置 `Cache-Control: public, max-age=31536000, immutable`，二次打开更快
+
 ## v0.8.2
 
 - **全局安装 Web UI**：修复 `npm install -g` 后访问 `/` 显示 `Cannot GET /`——前端静态目录改为相对安装包路径解析，不再依赖启动时的当前工作目录
