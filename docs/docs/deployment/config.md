@@ -6,7 +6,7 @@ mdocs **没有配置文件**。所有配置通过环境变量设置，遵循 12-
 
 | 环境变量 | 默认值 | 说明 |
 |---------|--------|------|
-| `MDOCS_HOST` | `127.0.0.1` | 监听地址 |
+| `MDOCS_HOST` | `0.0.0.0` | 监听地址（本机仅开发可设为 `127.0.0.1`） |
 | `MDOCS_PORT` | `4000` | 监听端口 |
 | `MDOCS_DATA_DIR` | `~/.mdocs` | 数据存储根目录 |
 | `MDOCS_LOG_LEVEL` | `info` | 日志级别（trace/debug/info/warn/error/fatal/silent） |
