@@ -8,6 +8,7 @@ mdocs **没有配置文件**。所有配置通过环境变量设置，遵循 12-
 |---------|--------|------|
 | `MDOCS_HOST` | `0.0.0.0` | 监听地址（本机仅开发可设为 `127.0.0.1`） |
 | `MDOCS_PORT` | `4000` | 监听端口 |
+| `MDOCS_WEB_DIST` | （包内 `dist/web`） | 前端静态资源目录；全局 `npm install -g` 时一般无需设置 |
 | `MDOCS_DATA_DIR` | `~/.mdocs` | 数据存储根目录 |
 | `MDOCS_LOG_LEVEL` | `info` | 日志级别（trace/debug/info/warn/error/fatal/silent） |
 | `MDOCS_CONSOLE_LEVEL` | `info` | 控制台日志级别 |
