@@ -38,6 +38,25 @@ git clone https://github.com/xuhuafeifei/mdocs-cli.git ~/.mdocs-cli
 
 入口文件：`~/.mdocs-cli/mdocs.mjs`（需 Node.js 18+）
 
+### 连接与认证
+
+全局选项可放在命令任意位置，**优先级高于环境变量**：
+
+| 来源 | Token | 服务端 |
+|------|-------|--------|
+| 命令行 | `--token <token>`（必填其一） | `--ip <host[:port]>` 可选 |
+| 环境变量 | `MDOCS_TOKEN` | `MDOCS_SERVER` |
+| 默认 | — | `http://127.0.0.1:4000` |
+
+```bash
+# 连远程服务器（一次性）
+node ~/.mdocs-cli/mdocs.mjs --token <token> --ip 101.132.222.88:4000 domains
+
+# 或写入环境变量
+export MDOCS_TOKEN="<你的 token>"
+export MDOCS_SERVER="http://101.132.222.88:4000"
+```
+
 ### 命令参考
 
 | 命令                                                                               | 用途                          |
@@ -48,6 +67,7 @@ git clone https://github.com/xuhuafeifei/mdocs-cli.git ~/.mdocs-cli
 | `update <文档ID> --content <新正文> [--title <新标题>]`                            | 更新文档内容                  |
 | `domains`                                                                          | 列出当前 Token 可访问的所有域 |
 | `mkdir --domain <域ID> --name <目录名> [--parent <目录ID>]`                        | 创建目录                      |
+| `ls <documentId>` 或 `ls "关键词" --domain <域ID>`                                 | 列出目录下子节点              |
 
 ### 使用示例
 
@@ -79,9 +99,12 @@ node ~/.mdocs-cli/mdocs.mjs update <文档ID> \
 # 使用 curl
 curl -H "x-cli-token: <你的 token>" https://your-mdocs-server.com/api/documents
 
-# 或设置环境变量
+# 环境变量（与 --token 二选一）
 export MDOCS_TOKEN="<你的 token>"
+export MDOCS_SERVER="http://your-mdocs-server.com:4000"   # 可选，默认本机 4000
 ```
+
+也可在每条命令上用 `--token` / `--ip` 覆盖，见上文「连接与认证」。
 
 Token 继承你当前访客的所有权限——能读的文档它也能读，能写的文档它也能写。
 
