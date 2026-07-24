@@ -1,10 +1,14 @@
 # 更新日志
 
+## v0.8.9
+
+- **编辑器依赖**：升级 `@fgbg/lobe-editor@1.0.0-fork.16`——导出 `INSERT_MARKMAP_COMMAND`，斜杠 Markmap 使用正式 command API
+- **编辑器顶栏**：撤销/重做后新增「文档顶部插入空行」「文档末尾插入空行」
+- **斜杠菜单**：增加 Meta2d、Markmap 快捷插入
+- **发布后视口**：服务端正文与刚发布内容一致时不再整棵 `setDocument` 重挂，减轻 Mermaid 等块导致的跳动
+
 ## v0.8.8
 
-- **编辑器依赖**：升级 `@fgbg/lobe-editor@1.0.0-fork.16`——导出 `INSERT_MARKMAP_COMMAND`，斜杠插入 Markmap 使用正式 command API
-- **编辑器顶栏**：撤销/重做后新增「文档顶部插入空行」「文档末尾插入空行」，便于在首尾快速留白编辑
-- **斜杠菜单**：增加 Meta2d、Markmap 快捷插入（与 `---meta2d---` / markmap 语法一致）
 - **编辑器依赖**：升级 `@fgbg/lobe-editor@1.0.0-fork.15`——仅当反引号之间有内容时才转为行内代码，避免空 `` 抢占导致无法输入 fenced 代码块；并补充 Meta2d 斜杠插入后自动打开编辑器
 
 ## v0.8.7
