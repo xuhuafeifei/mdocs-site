@@ -17,6 +17,7 @@
 | 导航项 | 功能 |
 |-------|------|
 | [通用](#通用设置) | 语言切换、自动编辑、CLI Token、恢复码 |
+| [AI](./onboarding-ai.md) | 上手助手用的 DeepSeek 模型与 API Key |
 | [我的收藏](./bookmarks.md) | 收藏的文档列表，支持搜索、取消收藏 |
 | [我的文章](./my-documents.md) | 自己创建的所有文档，支持邀请成员 |
 | [域管理](../usage/domain-members.md#域管理) | 创建、重命名、删除域，配置域权限与成员 |
@@ -51,6 +52,10 @@
 ### 恢复码
 
 用于访客身份恢复。详情请参考 [恢复码](./recovery-code.md)。
+
+### AI（上手助手）
+
+在设置页 **AI** Tab 配置个人 DeepSeek 模型与 API Key，供左下角上手助手调用。详情请参考 [上手助手（AI）](./onboarding-ai.md)。
 
 ---
 

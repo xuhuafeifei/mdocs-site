@@ -1,5 +1,10 @@
 # 更新日志
 
+## v0.8.10
+
+- **上手助手（AI）**：左下角浮动入口；设置页「AI」配置个人 DeepSeek Key；按访客落盘会话（`tenant/<id>/agent/session`），多轮续聊；回答引用手册页面链接；思考中三点动画；跟随滚动仅在贴底时生效
+- **手册**：新增 [上手助手（AI）](./usage/onboarding-ai.md)
+
 ## v0.8.9
 
 - **编辑器依赖**：升级 `@fgbg/lobe-editor@1.0.0-fork.16`——导出 `INSERT_MARKMAP_COMMAND`，斜杠 Markmap 使用正式 command API

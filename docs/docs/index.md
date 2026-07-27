@@ -16,6 +16,7 @@
 ## 使用指南
 
 - [设置页面概览](./usage/settings.md)——集中配置中心
+- [上手助手（AI）](./usage/onboarding-ai.md)——产品向导，答疑不代写
 - [编辑体验](./usage/markdown.md)——富文本编辑，Markdown 存储
 - [流程图生成](./usage/flowchart.md)——拖拽绘制，嵌入文档
 - [草稿与同步](./usage/drafts.md)——本地优先，按需发布
