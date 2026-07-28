@@ -1,6 +1,38 @@
 import type { ReactNode } from "react";
+import {
+  FEATURES_HEADING,
+  FEATURES_SUBHEADING,
+  SELLING_POINTS,
+  type SellingPointId,
+} from "../constants";
 
 /* ===== SVG Placeholder Illustrations ===== */
+
+function IllusOnboardingAi() {
+  return (
+    <svg
+      width="320"
+      height="200"
+      viewBox="0 0 320 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="上手助手聊天浮层示意图"
+    >
+      <rect x="24" y="24" width="180" height="152" rx="10" fill="#f9fafb" stroke="#d0f0e0" strokeWidth="2" />
+      <rect x="24" y="24" width="180" height="28" rx="10" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
+      <circle cx="44" cy="38" r="6" fill="#3ccd6e" />
+      <rect x="58" y="34" width="72" height="8" rx="4" fill="#a5e7bc" />
+      <rect x="40" y="68" width="100" height="20" rx="8" fill="#ebf9f0" stroke="#a5e7bc" strokeWidth="1" />
+      <rect x="88" y="100" width="96" height="20" rx="8" fill="#fff" stroke="#e5e7eb" strokeWidth="1" />
+      <rect x="40" y="132" width="84" height="20" rx="8" fill="#ebf9f0" stroke="#a5e7bc" strokeWidth="1" />
+      <rect x="220" y="48" width="76" height="104" rx="12" fill="#ebf9f0" stroke="#2ba357" strokeWidth="2" />
+      <circle cx="258" cy="88" r="16" fill="#fff" stroke="#2ba357" strokeWidth="2" />
+      <path d="M250 88h16M258 80v16" stroke="#2ba357" strokeWidth="2" strokeLinecap="round" />
+      <rect x="236" y="116" width="44" height="6" rx="3" fill="#a5e7bc" />
+      <rect x="242" y="130" width="32" height="6" rx="3" fill="#d0f0e0" />
+    </svg>
+  );
+}
 
 function IllusZeroDependency() {
   return (
@@ -371,120 +403,6 @@ function IllusNoAccount() {
   );
 }
 
-function IllusDrafts() {
-  return (
-    <svg
-      width="380"
-      height="200"
-      viewBox="0 0 380 200"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="智能草稿管理示意图"
-    >
-      <rect
-        x="8"
-        y="40"
-        width="90"
-        height="64"
-        rx="8"
-        fill="#ebf9f0"
-        stroke="#2ba357"
-        strokeWidth="2"
-      />
-      <rect
-        x="18"
-        y="50"
-        width="70"
-        height="44"
-        rx="4"
-        fill="#f9fafb"
-        stroke="#e5e7eb"
-        strokeWidth="1"
-      />
-      <rect x="24" y="56" width="58" height="4" rx="2" fill="#d0f0e0" />
-      <rect x="24" y="66" width="44" height="4" rx="2" fill="#e5e7eb" />
-      <rect x="24" y="76" width="52" height="4" rx="2" fill="#e5e7eb" />
-      <rect x="24" y="86" width="36" height="4" rx="2" fill="#e5e7eb" />
-      <path
-        d="M125 85 C140 65, 170 65, 185 85"
-        stroke="#2ba357"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeDasharray="6 3"
-        fill="none"
-      />
-      <path
-        d="M140 55 C150 45, 160 45, 170 55"
-        stroke="#3ccd6e"
-        strokeWidth="2"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M135 70 C150 58, 160 58, 175 70"
-        stroke="#3ccd6e"
-        strokeWidth="2"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M195 55 L240 55 L230 35 L260 60 L230 85 L240 65 L195 65 Z"
-        fill="#d0f0e0"
-        stroke="#2ba357"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <rect
-        x="268"
-        y="36"
-        width="90"
-        height="72"
-        rx="10"
-        fill="#f9fafb"
-        stroke="#d0f0e0"
-        strokeWidth="2"
-      />
-      <rect x="280" y="52" width="66" height="6" rx="3" fill="#a5e7bc" />
-      <rect x="280" y="66" width="52" height="6" rx="3" fill="#e5e7eb" />
-      <rect x="280" y="80" width="58" height="6" rx="3" fill="#e5e7eb" />
-      <path
-        d="M355 72 L370 72"
-        stroke="#3ccd6e"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <circle cx="370" cy="72" r="4" fill="#3ccd6e" />
-      <path
-        d="M313 120 L313 100"
-        stroke="#2ba357"
-        strokeWidth="2"
-        markerEnd="url(#arrowSync)"
-      />
-      <defs>
-        <marker
-          id="arrowSync"
-          markerWidth="6"
-          markerHeight="6"
-          refX="5"
-          refY="3"
-          orient="auto"
-        >
-          <path d="M0 0 L6 3 L0 6 Z" fill="#2ba357" />
-        </marker>
-      </defs>
-      <text
-        x="313"
-        y="144"
-        textAnchor="middle"
-        fontSize="11"
-        fill="#1c7a40"
-        fontWeight="600"
-      >
-        本地保存
-      </text>
-    </svg>
-  );
-}
 
 function IllusCliAgent() {
   return (
@@ -521,49 +439,18 @@ function IllusCliAgent() {
 
 /* ===== Data ===== */
 
-interface ModuleData {
-  title: string;
-  subtitle: string;
-  tags: string[];
-  illustration: ReactNode;
-}
+const ILLUSTRATIONS: Record<SellingPointId, ReactNode> = {
+  "onboarding-ai": <IllusOnboardingAi />,
+  "agent-dev-loop": <IllusCliAgent />,
+  "private-deploy": <IllusZeroDependency />,
+  "no-account": <IllusNoAccount />,
+  "edit-and-draft": <IllusDualEditing />,
+};
 
-const modules: ModuleData[] = [
-  {
-    title: "零依赖部署",
-    subtitle:
-      "SQLite + 文件系统驱动，无需任何数据库、缓存或消息队列中间件。单文件即可运行，部署极简，维护零成本",
-    tags: ["一键启动"],
-    illustration: <IllusZeroDependency />,
-  },
-  {
-    title: "双模编辑体验",
-    subtitle:
-      "完整的 Markdown 语法支持 + 可视化富文本工具栏。拖拽生成流程图和图表，所有内容以纯文本存储在 .md 文件中",
-    tags: ["所见即所得"],
-    illustration: <IllusDualEditing />,
-  },
-  {
-    title: "无账户协作模型",
-    subtitle:
-      "访问者即身份，无需注册登录。通过「域隔离 + 文档级邀请」实现从完全私有到开放协作的灵活权限控制，适合小团队快速启动。",
-    tags: ["无需注册", "精细权限"],
-    illustration: <IllusNoAccount />,
-  },
-  {
-    title: "智能草稿管理",
-    subtitle:
-      "编辑内容自动保存至本地，网络空闲时同步到后端。支持手动/自动切换，断网不丢数据",
-    tags: ["自动保存", "断网不丢数据"],
-    illustration: <IllusDrafts />,
-  },
-  {
-    title: 'CLI 与 Agent 原生接入',
-    subtitle: '独立 CLI 客户端 + Token 认证，支持命令行批量管理文档、CI/CD 流水线集成，以及 AI Agent（如 Claude Code）直接读写知识库。',
-    tags: ['CLI 工具', 'Agent Ready'],
-    illustration: <IllusCliAgent />,
-  },
-];
+const modules = SELLING_POINTS.map((point) => ({
+  ...point,
+  illustration: ILLUSTRATIONS[point.id],
+}));
 
 /* ===== Feature Module ===== */
 
@@ -597,7 +484,7 @@ function FeatureModule({
   data,
   imageRight,
 }: {
-  data: ModuleData;
+  data: (typeof modules)[number];
   imageRight: boolean;
 }) {
   const handleRowHover = (el: HTMLDivElement, enter: boolean) => {
@@ -642,8 +529,8 @@ function FeatureModule({
           <span
             key={tag}
             style={{
-              background: "#e8f5e9",
-              color: "#1c7a40",
+              background: data.tagBg,
+              color: data.tagColor,
               padding: "4px 14px",
               borderRadius: "16px",
               fontSize: "0.875rem",
@@ -719,10 +606,10 @@ export function WhyMdocsPage() {
             margin: "0 0 8px",
           }}
         >
-          为什么选择 mdocs
+          {FEATURES_HEADING}
         </p>
         <p style={{ fontSize: "0.9rem", color: "#6b7280", margin: 0 }}>
-          四个维度，了解 mdocs 的与众不同
+          {FEATURES_SUBHEADING}
         </p>
       </div>
 

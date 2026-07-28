@@ -1,4 +1,5 @@
-import { Rocket } from 'lucide-react';
+import { Bot, Rocket } from 'lucide-react';
+import { CTA_HEADING, CTA_SUPPORT } from '../constants';
 
 const BASE = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
 
@@ -13,10 +14,10 @@ export function CTA() {
       }}
     >
       <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#14532d', margin: '0 0 8px' }}>
-        别再等待，现在就开始自由书写
+        {CTA_HEADING}
       </h2>
       <p style={{ fontSize: '1rem', color: '#4b5563', margin: '0 0 28px', lineHeight: 1.5 }}>
-        免费使用 · 开源可控 · 5分钟部署 · 无需注册
+        {CTA_SUPPORT}
       </p>
       <div className="mdocs-cta-actions">
         <a
@@ -25,6 +26,13 @@ export function CTA() {
         >
           <Rocket size={18} strokeWidth={2} aria-hidden />
           立即创建我的知识库
+        </a>
+        <a
+          className="mdocs-btn mdocs-btn-secondary"
+          href={`${BASE}docs/usage/agent-dev-loop`}
+        >
+          <Bot size={18} strokeWidth={2} aria-hidden />
+          接入 Agent Skills
         </a>
       </div>
     </section>

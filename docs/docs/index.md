@@ -7,6 +7,12 @@
 - [安装与启动](./getting-started/installation.md)
 - [第一个文档](./getting-started/first-kb.md)
 
+## AI 与 Agent
+
+- [上手助手（AI）](./usage/onboarding-ai.md)——产品向导，答疑不代写
+- [Agent 开发闭环](./usage/agent-dev-loop.md)——CLI + Skills 接入 Cursor / Claude
+- [CLI Token](./usage/cli-token.md)——命令行与 Agent 身份令牌
+
 ## 核心设计
 
 - [域隔离](./core-concepts/domain.md)——团队与个人的逻辑边界
@@ -16,7 +22,6 @@
 ## 使用指南
 
 - [设置页面概览](./usage/settings.md)——集中配置中心
-- [上手助手（AI）](./usage/onboarding-ai.md)——产品向导，答疑不代写
 - [编辑体验](./usage/markdown.md)——富文本编辑，Markdown 存储
 - [流程图生成](./usage/flowchart.md)——拖拽绘制，嵌入文档
 - [草稿与同步](./usage/drafts.md)——本地优先，按需发布

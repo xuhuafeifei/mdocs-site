@@ -1,6 +1,10 @@
 # CLI Token
 
-CLI Token 是给命令行工具和 AI Agent（如 Claude Code）使用的身份令牌，继承你在 mdocs 中的所有权限。Token 与你的访客身份绑定，创建后可以通过 HTTP API 读写文档。
+CLI Token 是给命令行工具和 AI Agent（如 Claude Code、Cursor）使用的身份令牌，继承你在 mdocs 中的所有权限。Token 与你的访客身份绑定，创建后可以通过 HTTP API 读写文档。
+
+整体怎么把 CLI / Skills 嵌进开发流程（含 **丢文章 URL**、**`/mdocs-dev`**），见 [Agent 开发闭环](./agent-dev-loop.md)。
+
+最基础的 Agent 用法：加载 **mdocs-cli** skill 后，直接把 mdocs 文章链接发给 Agent，用自然语言说明要读目录、读正文或搜索即可，不必先手写 CLI。
 
 ## 适用场景
 
@@ -10,7 +14,7 @@ CLI Token 是给命令行工具和 AI Agent（如 Claude Code）使用的身份�
 
 ## 创建 Token
 
-1. 打开 mdocs 的设置页，切换到「通用」Tab。
+1. 打开 mdocs 的设置页（侧栏底部访客信息），切换到「通用」。
 2. 找到 **CLI Token** 卡片，点击「创建」。
 3. 系统会生成一个新的 Token，**仅在此时展示一次**，请立即复制保存。
 

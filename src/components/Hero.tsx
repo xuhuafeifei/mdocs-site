@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { BookOpen, Rocket, X } from 'lucide-react';
+import { Bot, Rocket, X } from 'lucide-react';
 import mdocsLogoUrl from '../assets/mdocs-logo.svg?url';
+import { HERO_EYEBROW, HERO_SUPPORT, HERO_TAGS } from '../constants';
 
 const BASE = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
 
@@ -155,7 +156,7 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
           letterSpacing: '0.04em',
         }}
       >
-        为个人开发者与小团队打造的极简知识中枢
+        {HERO_EYEBROW}
       </p>
 
       <h1 className="mdocs-hero-title">自由书写，一字不落</h1>
@@ -171,7 +172,7 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
           flexWrap: 'wrap',
         }}
       >
-        {['零依赖部署', '双模编辑', '无账户协作', '智能草稿', 'Agent Ready'].map((tag) => (
+        {HERO_TAGS.map((tag) => (
           <span
             key={tag}
             style={{
@@ -202,7 +203,7 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
           marginRight: 'auto',
         }}
       >
-        无需注册 · 打开即写
+        {HERO_SUPPORT}
       </p>
 
       <div className="mdocs-hero-actions">
@@ -211,9 +212,9 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
           <Rocket size={18} strokeWidth={2} aria-hidden />
           立即体验 · 无需注册
         </button>
-        <a className="mdocs-btn mdocs-btn-secondary" href={`${BASE}docs/`}>
-          <BookOpen size={18} strokeWidth={2} aria-hidden />
-          了解技术原理
+        <a className="mdocs-btn mdocs-btn-secondary" href={`${BASE}docs/usage/agent-dev-loop`}>
+          <Bot size={18} strokeWidth={2} aria-hidden />
+          AI 与 Agent
         </a>
         {afterHeroActions}
       </div>

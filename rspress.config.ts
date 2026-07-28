@@ -8,7 +8,7 @@ export default defineConfig({
   },
   lang: 'zh-CN',
   title: 'mdocs-site',
-  description: '开源 Markdown 知识库 · 纯私有化 · 无账户协作 · CLI 与 Agent 原生接入',
+  description: '开源 Markdown 知识库 · 上手 AI · Agent 开发闭环 · 纯私有化',
   icon: '/favicon.svg',
   logo: '/favicon.svg',
   logoText: 'mdocs',
@@ -37,6 +37,14 @@ export default defineConfig({
           ],
         },
         {
+          text: 'AI 与 Agent',
+          items: [
+            { text: '上手助手（AI）', link: '/docs/usage/onboarding-ai' },
+            { text: 'Agent 开发闭环', link: '/docs/usage/agent-dev-loop' },
+            { text: 'CLI Token', link: '/docs/usage/cli-token' },
+          ],
+        },
+        {
           text: '核心概念',
           items: [
             { text: '所见皆文件', link: '/docs/core-concepts/all-files' },
@@ -62,8 +70,7 @@ export default defineConfig({
               text: '受限域成员与模板',
               link: '/docs/usage/domain-members',
             },
-            { text: 'CLI Token', link: '/docs/usage/cli-token' },
-            { text: '恢复码与身份找回', link: '/docs/usage/recovery-code' },
+            { text: '恢复码（兼容）', link: '/docs/usage/recovery-code' },
           ],
         },
         {

@@ -101,6 +101,7 @@ function Footer() {
           title="产品"
           links={[
             { text: '功能特性', href: `${base}#features` },
+            { text: 'Agent 开发闭环', href: `${base}docs/usage/agent-dev-loop` },
             { text: '竞品对比', href: `${base}docs/why-mdocs` },
             { text: '更新日志', href: `${base}docs/changelog` },
           ]}
