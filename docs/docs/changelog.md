@@ -1,5 +1,9 @@
 # 更新日志
 
+## v0.8.13
+
+- **修复空文档白屏**：空 markdown / Lexical `children: []` 打开时补空段落，避免 editor 全局崩溃
+
 ## v0.8.12
 
 - **文档移动**：侧栏可拖拽 Markdown 文档到文件夹 / 同目录文章旁 / 域根；仅创建者后端成功；`POST /api/documents/:id/move`
