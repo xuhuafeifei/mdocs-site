@@ -1,5 +1,10 @@
 # 更新日志
 
+## v0.8.14
+
+- **发布包修复**：`prepack` 现会执行完整 `pnpm build`，避免只升版本号却打出旧 `dist`（此前 0.8.12/0.8.13 缺文档拖拽移动、可拖动助手入口等）
+- **手册**：补充[小服务器安装](./getting-started/installation.md#小服务器安装低内存--云主机)（Swap、`ENOTEMPTY`、低内存 `npm install -g`）
+
 ## v0.8.13
 
 - **修复空文档白屏**：空 markdown / Lexical `children: []` 打开时补空段落，避免 editor 全局崩溃
