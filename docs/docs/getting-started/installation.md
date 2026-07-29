@@ -95,15 +95,98 @@ mdocs start
 
 启动后访问 `http://localhost:4000`（npm 安装）或 `http://localhost:5173`（开发模式），看到访客注册弹窗即表示运行成功。
 
+## 小服务器安装（低内存 / 云主机）
+
+1 核 / 1G 内存左右的机器（如轻量阿里云）上，`npm install -g` 很容易被内核 **`Killed`（OOM）**，或因半残目录报 `ENOTEMPTY`。按下面做更稳。
+
+### 1. 加 Swap（强烈建议）
+
+```bash
+# 加 2G swap
+fallocate -l 2G /swapfile || dd if=/dev/zero of=/swapfile bs=1M count=2048
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+free -h
+```
+
+确认 `Swap` 一行不再是 `0B`。重启后若要长期保留，把 `/swapfile swap swap defaults 0 0` 写入 `/etc/fstab`。
+
+### 2. 清掉半残的全局目录
+
+上次安装被 `Killed` 或报 `ENOTEMPTY` 时必做：
+
+```bash
+rm -rf /usr/lib/node_modules/@fgbg
+npm cache clean --force
+```
+
+### 3. 限制内存与并发后再装
+
+优先走官方 registry（国内镜像可能尚未同步新版本）：
+
+```bash
+NODE_OPTIONS="--max-old-space-size=512" npm install -g @fgbg/mdocs@latest \
+  --registry=https://registry.npmjs.org/ \
+  --legacy-peer-deps \
+  --no-audit \
+  --no-fund \
+  --maxsockets=1
+```
+
+不要用 `npm install -g ... -force`：peer 警告可忽略，`-force` 只会更吃内存。
+
+### 4. 离线 tgz（网络差时）
+
+在网络较好的机器上打包，再拷到服务器：
+
+```bash
+# 本机
+npm pack @fgbg/mdocs@latest --registry=https://registry.npmjs.org/
+# 得到 fgbg-mdocs-x.y.z.tgz，scp 到服务器后：
+NODE_OPTIONS="--max-old-space-size=512" npm install -g ./fgbg-mdocs-*.tgz \
+  --legacy-peer-deps \
+  --no-audit \
+  --no-fund \
+  --maxsockets=1
+```
+
+### 5. 备选：不装全局，本地 + 软链
+
+全局仍 OOM 时，可装到当前目录再链出命令：
+
+```bash
+cd /root   # 或任意工作目录
+NODE_OPTIONS="--max-old-space-size=512" npm install ./fgbg-mdocs-*.tgz \
+  --legacy-peer-deps --no-audit --no-fund --maxsockets=1
+ln -sf "$(pwd)/node_modules/.bin/mdocs" /usr/local/bin/mdocs
+mdocs --help
+```
+
+若出现 `Cannot find module '.../typebox/build/index.mjs'`，补装依赖即可：
+
+```bash
+npm install typebox@1.1.38 --no-audit --no-fund
+```
+
+### 常见报错
+
+| 现象 | 原因 | 处理 |
+|------|------|------|
+| 安装过程 `Killed` | OOM | 加 Swap，限制 `--maxsockets=1` |
+| `ENOTEMPTY` rename `@fgbg/mdocs` | 上次半残目录 | `rm -rf /usr/lib/node_modules/@fgbg` 后重装 |
+| `ETARGET` / No matching version | 镜像未同步 | `--registry=https://registry.npmjs.org/` 或改用 tgz |
+| `mdocs: command not found` | 用了非 `-g` 安装 | 用全局安装，或软链 `node_modules/.bin/mdocs` |
+
 ## 升级
 
 通过 npm 安装的版本，直接重新安装即可升级：
 
 ```bash
-npm install -g @fgbg/mdocs@latest
+npm install -g @fgbg/mdocs@latest --registry=https://registry.npmjs.org/
 ```
 
-升级后重启服务即可。
+小服务器升级时建议仍按上面「清半残目录 + 限制并发」步骤执行，升级后重启服务即可。
 
 ## 下一步
 

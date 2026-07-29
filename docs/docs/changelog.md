@@ -3,6 +3,7 @@
 ## v0.8.13
 
 - **修复空文档白屏**：空 markdown / Lexical `children: []` 打开时补空段落，避免 editor 全局崩溃
+- **手册**：补充[小服务器安装](./getting-started/installation.md#小服务器安装低内存--云主机)（Swap、`ENOTEMPTY`、低内存 `npm install -g`）
 
 ## v0.8.12
 
