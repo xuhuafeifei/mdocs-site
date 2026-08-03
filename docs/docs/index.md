@@ -9,7 +9,7 @@
 
 ## AI 与 Agent
 
-- [上手助手（AI）](./usage/onboarding-ai.md)——Ask 答疑 / 帮写改稿；共用 DeepSeek 配置
+- [智能助手（AI）](./usage/onboarding-ai.md)——低交互覆写 vs 帮写高交互审阅
 - [Agent 开发闭环](./usage/agent-dev-loop.md)——CLI + Skills 接入 Cursor / Claude
 - [CLI Token](./usage/cli-token.md)——命令行与 Agent 身份令牌
 

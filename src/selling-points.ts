@@ -1,7 +1,7 @@
 /** Homepage / why-mdocs shared copy — keep FeatureSection & WhyMdocsPage in sync. */
 
 export const HERO_TAGS = [
-  '上手 AI',
+  '上手 AI · 双模式',
   'Agent 开发闭环',
   '私有部署',
   '无账户协作',
@@ -21,7 +21,7 @@ export const FEATURES_SUBHEADING =
 export const CTA_HEADING = '别再等待，现在就开始自由书写';
 
 export const CTA_SUPPORT =
-  '免费开源 · 上手助手 · Agent Skills · 5 分钟部署 · 无需注册';
+  '免费开源 · 上手助手 · 帮写模式 · Agent Skills · 5 分钟部署 · 无需注册';
 
 export type SellingPointId =
   | 'onboarding-ai'
@@ -43,10 +43,10 @@ export interface SellingPointCopy {
 export const SELLING_POINTS: SellingPointCopy[] = [
   {
     id: 'onboarding-ai',
-    title: '上手助手（AI）',
+    title: 'AI 双模式：智能助手 + 帮写',
     subtitle:
-      '产品内浮层答疑：域、草稿、发布、权限怎么用，按需阅读本站手册再回答。明确不代写、不润色、不改正文——只帮你更快上手 mdocs。',
-    tags: ['产品向导', '读手册答疑', '不代写'],
+      '最大差别是交互度：智能助手偏一次覆写（答疑、搜文、结构操作、全文重写）；帮写偏高交互——左聊右 Diff、按段接受，你拍板后才写回。',
+    tags: ['低交互覆写', '高交互审阅', '双模式'],
     tagBg: '#e8f5e9',
     tagColor: '#2e7d32',
   },

@@ -39,7 +39,7 @@ export default defineConfig({
         {
           text: 'AI 与 Agent',
           items: [
-            { text: '上手助手（AI）', link: '/docs/usage/onboarding-ai' },
+            { text: '智能助手（AI）', link: '/docs/usage/onboarding-ai' },
             { text: 'Agent 开发闭环', link: '/docs/usage/agent-dev-loop' },
             { text: 'CLI Token', link: '/docs/usage/cli-token' },
           ],

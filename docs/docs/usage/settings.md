@@ -2,7 +2,7 @@
 
 ## 功能概述
 
-设置页面是 mdocs 的集中配置中心：身份与密码、收藏与文章、域与成员模板、上手助手、草稿同步等都在这里。
+设置页面是 mdocs 的集中配置中心：身份与密码、收藏与文章、域与成员模板、智能助手、草稿同步等都在这里。
 
 ## 入口
 
@@ -25,7 +25,7 @@
 | [我的文章](./my-documents.md) | 自己创建的文档、邀请成员、打开 |
 | [域管理](./domain-members.md) | 创建 / 筛选 / 重命名 / 改类型 / 删除域；受限域成员 |
 | [域成员模板](./domain-members.md) | 可复用的访客名单 |
-| [AI](./onboarding-ai.md) | 上手助手的 DeepSeek 配置 |
+| [AI](./onboarding-ai.md) | 智能助手与帮写的 DeepSeek 配置 |
 | [保存与发布](./drafts.md) | 本地快照、自动同步、未发布草稿 |
 
 ---
@@ -68,7 +68,7 @@ Token / Cookie 丢失时的自助找回；引入登录密码后已边缘化。�
 | 我的收藏 | [收藏功能](./bookmarks.md) |
 | 我的文章 | [我的文章](./my-documents.md) |
 | 域管理 / 域成员模板 | [受限域成员与名单模板](./domain-members.md) |
-| AI | [上手助手（AI）](./onboarding-ai.md) |
+| AI | [智能助手（AI）](./onboarding-ai.md) |
 | 保存与发布 | [草稿与同步](./drafts.md) |
 
 ---
