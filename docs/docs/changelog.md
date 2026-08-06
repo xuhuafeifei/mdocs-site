@@ -1,5 +1,11 @@
 # 更新日志
 
+## v0.8.20
+
+- **私人 Agent Skills**：设置 → AI 可 CRUD 私人提示词宏（名称对本账号唯一，仅英文数字下划线）；智能助手 / 帮写可按名称引用，落盘只存引用，请求时再展开进上下文
+- **助手可管理 Skill**：`list_user_skills` / `create_user_skill` / `update_user_skill` / `delete_user_skill`；新建与修改弹出带倒计时的表单卡
+- **`mdocs update`**：全局安装后从淘宝 npmmirror 原地升级，保留已有 `node_modules`，依赖走 `--prefer-offline`（已缓存的不再重复下载）
+
 ## v0.8.19
 
 - **Meta2d 按需加载**：文档没有流程图时不下载 `@meta2d`；有图 / 插入图 / 打开编辑时再加载

@@ -180,13 +180,23 @@ npm install typebox@1.1.38 --no-audit --no-fund
 
 ## 升级
 
-通过 npm 安装的版本，直接重新安装即可升级：
+### 推荐：`mdocs update`（原地升级）
+
+已全局安装时，直接：
+
+```bash
+mdocs update
+```
+
+该命令写死从淘宝镜像 [`https://registry.npmmirror.com`](https://registry.npmmirror.com) 拉取最新 `@fgbg/mdocs`，**保留现有 `node_modules`**，再用 `npm install --prefer-offline` 只补差量依赖（本地缓存里已有的包不会再下一遍）。升级后重启服务即可。
+
+### 备选：重新全局安装
 
 ```bash
 npm install -g @fgbg/mdocs@latest --registry=https://registry.npmjs.org/
 ```
 
-小服务器升级时建议仍按上面「清半残目录 + 限制并发」步骤执行，升级后重启服务即可。
+小服务器若遇半残目录或 OOM，仍按上面「清半残目录 + 限制并发」步骤执行。
 
 ## 下一步
 

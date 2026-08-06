@@ -68,8 +68,22 @@ Token / Cookie 丢失时的自助找回；引入登录密码后已边缘化。�
 | 我的收藏 | [收藏功能](./bookmarks.md) |
 | 我的文章 | [我的文章](./my-documents.md) |
 | 域管理 / 域成员模板 | [受限域成员与名单模板](./domain-members.md) |
-| AI | [智能助手（AI）](./onboarding-ai.md) |
+| AI | [智能助手（AI）](./onboarding-ai.md)（含 DeepSeek 配置与私人 Agent Skills） |
 | 保存与发布 | [草稿与同步](./drafts.md) |
+
+---
+
+## AI 设置里的 Agent Skills
+
+在 **设置 → AI**，DeepSeek 配置下方有 **Agent Skills**：
+
+- 新建 / 编辑 / 删除**私人**提示词宏（仅本人可见）
+- **名称**对本账号唯一，仅允许英文、数字、下划线（如 `weekly_report`）
+- 在智能助手或帮写输入区点 **Skill**，按名称勾选后随本轮消息引用
+
+也可在对话里让助手调用管理工具（列出、新建、修改、删除）；新建与修改会弹出带倒计时的表单卡。
+
+详情见 [智能助手（AI）](./onboarding-ai.md#私人-agent-skills)。
 
 ---
 
