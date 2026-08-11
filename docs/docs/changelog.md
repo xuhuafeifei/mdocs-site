@@ -1,5 +1,13 @@
 # 更新日志
 
+## v0.8.22
+
+- **帮写 inline diff**：有未接受提案时强制进入 inline diff（不可切回源码）；相同行 / 绿增可改提案，红删只读；写回仍以已接受的 `currentMd` 为准
+- **AI 设置滚动**：设置页「AI 配置」上下卡片可完整滚动，不再被截断
+- **`mdocs version`**：CLI 输出当前安装包版本（亦支持 `-v` / `--version`）
+- **目录子树 API**：`GET /api/documents/folder/:folderId/tree` 返回精简树（目录/文章 + id/标题）
+- **停止生成**：智能助手与帮写支持中途停止（断开 SSE）
+
 ## v0.8.21
 
 - **思考流可见**：智能助手与帮写均展示 DeepSeek thinking（可折叠「思考中」），长时间等待不再像掉线
