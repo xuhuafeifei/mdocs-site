@@ -1,5 +1,13 @@
 # 更新日志
 
+## v0.8.23
+
+- **手机阅读壳**：窄屏侧栏改为抽屉（默认不占宽）；文档顶栏浮条/可吸附，隐藏域选择与帮写；设置页同样可收起左侧 Tab
+- **窄屏发布/删除**：浮条上提供紧凑发布、删除入口
+- **`mdocs update`**：查最新版本时加 `--prefer-online`，避免本机 npm 缓存把 latest 钉在旧版
+- **Markdown 文字颜色往返**：编辑器内设置的文字色 / 背景色可写入 Markdown（`<span style="color: …">` / `background-color`），再导入时还原；段落与表格单元格均支持，代码块内忽略（依赖 `@fgbg/lobe-editor@1.0.0-fork.20`）
+- **编辑器依赖**：升级 `@fgbg/lobe-editor@1.0.0-fork.20`
+
 ## v0.8.22
 
 - **帮写 inline diff**：有未接受提案时强制进入 inline diff（不可切回源码）；相同行 / 绿增可改提案，红删只读；写回仍以已接受的 `currentMd` 为准
