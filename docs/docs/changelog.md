@@ -1,5 +1,9 @@
 # 更新日志
 
+## v0.8.25
+
+- **`mdocs update` 抗缓存**：查最新版本与 `npm pack` 使用临时空 `--cache`，不再被本机 `~/.npm` 里旧的 packument 钉死（`--prefer-online` 仍可能读到缓存）
+
 ## v0.8.24
 
 - **手机正文顶满**：窄屏文档左右留白改为约 5px（PC 仍为 50px）
