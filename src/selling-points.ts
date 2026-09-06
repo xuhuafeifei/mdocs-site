@@ -2,33 +2,33 @@
 
 export const HERO_TAGS = [
   '上手 AI · 双模式',
+  '知识图谱',
   'Agent 开发闭环',
   '私有部署',
   '无账户协作',
-  '所见皆文件',
 ] as const;
 
 export const HERO_EYEBROW = '为个人开发者与小团队打造的 AI 原生知识中枢';
 
 export const HERO_SUPPORT =
-  '产品内上手助手 · CLI 接入 Cursor / Claude · 手册即 Agent 知识';
+  '给人看、也给 Agent 用 · 产品内助手与帮写 · 知识图谱 · CLI 接入 Cursor / Claude';
 
 export const FEATURES_HEADING = '为什么选择 mdocs';
 
 export const FEATURES_SUBHEADING =
-  'AI 两条路径 + 私有底座 — 给人用，也给 Agent 用。';
+  'AI 原生知识库：人建立全局认知，Agent 沿着关系检索 — 数据仍在你自己的机器上。';
 
 export const CTA_HEADING = '别再等待，现在就开始自由书写';
 
 export const CTA_SUPPORT =
-  '免费开源 · 上手助手 · 帮写模式 · Agent Skills · 5 分钟部署 · 无需注册';
+  '免费开源 · 上手助手 · 帮写 · 知识图谱 · Agent Skills · 5 分钟部署 · 无需注册';
 
 export type SellingPointId =
   | 'onboarding-ai'
   | 'agent-dev-loop'
+  | 'knowledge-graph'
   | 'private-deploy'
-  | 'no-account'
-  | 'edit-and-draft';
+  | 'no-account';
 
 export interface SellingPointCopy {
   id: SellingPointId;
@@ -39,22 +39,31 @@ export interface SellingPointCopy {
   tagColor: string;
 }
 
-/** Feature order: AI paths first, foundations after. */
+/** Feature order: AI paths + graph first, foundations after. */
 export const SELLING_POINTS: SellingPointCopy[] = [
   {
     id: 'onboarding-ai',
     title: 'AI 双模式：智能助手 + 帮写',
     subtitle:
-      '最大差别是交互度：智能助手偏一次覆写（答疑、搜文、结构操作、全文重写）；帮写偏高交互——左聊右 Diff、按段接受，你拍板后才写回。',
-    tags: ['低交互覆写', '高交互审阅', '双模式'],
+      '智能助手（Ask）答疑、搜文、结构操作，也可全文覆写；帮写（Coding）左聊右 Diff，按段接受后才写回。同一知识库，两种交互强度。',
+    tags: ['Ask 答疑', '帮写 Diff', '私人 Skills'],
     tagBg: '#e8f5e9',
     tagColor: '#2e7d32',
+  },
+  {
+    id: 'knowledge-graph',
+    title: '知识图谱：看见结构',
+    subtitle:
+      '从文档自动归纳概念与关系，目录级力导向图可下钻展开。给人一张知识地图，也给 Agent 可沿边扩展的语义索引。',
+    tags: ['概念 · 关系', '分层展开', '可追溯来源'],
+    tagBg: '#ede7f6',
+    tagColor: '#5e35b1',
   },
   {
     id: 'agent-dev-loop',
     title: 'Agent 开发闭环',
     subtitle:
-      'CLI Token + mdocs-cli Skills：Cursor / Claude 等可搜索、读写知识库；mdocs-dev 把需求与设计落在仓库契约里，diagram 落 Mermaid 图——知识库嵌进开发流程。',
+      'CLI Token + mdocs-cli Skills：Cursor / Claude 等可搜索、读写知识库；mdocs-dev 把需求与设计落在仓库契约里，diagram 落 Mermaid 图。',
     tags: ['CLI + Skills', 'mdocs-dev', 'Cursor / Claude'],
     tagBg: '#f3e5f5',
     tagColor: '#7b1fa2',
@@ -63,7 +72,7 @@ export const SELLING_POINTS: SellingPointCopy[] = [
     id: 'private-deploy',
     title: '本地私有 · 零依赖',
     subtitle:
-      'SQLite + 本地文件就地承接状态，无需外部数据库、缓存或消息队列。单进程即可运行，数据在你自己的机器上。',
+      'SQLite + 本地 Markdown 文件就地承接状态，无需外部数据库或消息队列。单进程即可运行，数据在你自己的机器上。',
     tags: ['一键启动', '纯私有化'],
     tagBg: '#e8f5e9',
     tagColor: '#2e7d32',
@@ -76,14 +85,5 @@ export const SELLING_POINTS: SellingPointCopy[] = [
     tags: ['无需注册', '精细权限'],
     tagBg: '#e0f2f1',
     tagColor: '#00695c',
-  },
-  {
-    id: 'edit-and-draft',
-    title: '双模编辑与智能草稿',
-    subtitle:
-      'Markdown 语法 + 富文本工具栏，流程图拖拽嵌入；编辑自动落本地草稿，空闲同步服务端，断网也不丢字。',
-    tags: ['所见即所得', '自动保存', '离线可用'],
-    tagBg: '#fff8e1',
-    tagColor: '#ff8f00',
   },
 ];

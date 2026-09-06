@@ -1,204 +1,14 @@
-import type { ReactNode } from 'react';
 import {
   FEATURES_HEADING,
   FEATURES_SUBHEADING,
   SELLING_POINTS,
-  type SellingPointId,
 } from '../constants';
-
-/* ===== SVG Placeholder Illustrations ===== */
-
-function IllusOnboardingAi() {
-  return (
-    <svg
-      width="320"
-      height="200"
-      viewBox="0 0 320 200"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="上手助手聊天浮层示意图"
-    >
-      <rect x="24" y="24" width="180" height="152" rx="10" fill="#f9fafb" stroke="#d0f0e0" strokeWidth="2" />
-      <rect x="24" y="24" width="180" height="28" rx="10" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
-      <circle cx="44" cy="38" r="6" fill="#3ccd6e" />
-      <rect x="58" y="34" width="72" height="8" rx="4" fill="#a5e7bc" />
-      <rect x="40" y="68" width="100" height="20" rx="8" fill="#ebf9f0" stroke="#a5e7bc" strokeWidth="1" />
-      <rect x="88" y="100" width="96" height="20" rx="8" fill="#fff" stroke="#e5e7eb" strokeWidth="1" />
-      <rect x="40" y="132" width="84" height="20" rx="8" fill="#ebf9f0" stroke="#a5e7bc" strokeWidth="1" />
-      <rect x="220" y="48" width="76" height="104" rx="12" fill="#ebf9f0" stroke="#2ba357" strokeWidth="2" />
-      <circle cx="258" cy="88" r="16" fill="#fff" stroke="#2ba357" strokeWidth="2" />
-      <path d="M250 88h16M258 80v16" stroke="#2ba357" strokeWidth="2" strokeLinecap="round" />
-      <rect x="236" y="116" width="44" height="6" rx="3" fill="#a5e7bc" />
-      <rect x="242" y="130" width="32" height="6" rx="3" fill="#d0f0e0" />
-    </svg>
-  );
-}
-
-
-function IllusZeroDependency() {
-  return (
-    <svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="本地数据与无外置中间件示意图">
-      <rect x="16" y="60" width="64" height="80" rx="8" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
-      <ellipse cx="48" cy="60" rx="32" ry="10" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
-      <text x="48" y="105" textAnchor="middle" fontSize="11" fill="#1c7a40" fontWeight="600">SQLite</text>
-      <rect x="110" y="70" width="56" height="64" rx="8" fill="#ebf9f0" stroke="#2ba357" strokeWidth="2" />
-      <path d="M118 78 L130 88 L158 78" stroke="#2ba357" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <rect x="118" y="98" width="40" height="6" rx="3" fill="#a5e7bc" />
-      <rect x="118" y="110" width="28" height="6" rx="3" fill="#a5e7bc" />
-      <path d="M185 105 L215 105" stroke="#3ccd6e" strokeWidth="3" strokeLinecap="round" markerEnd="url(#arrowGreen)" />
-      <defs>
-        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-          <path d="M0 0 L8 4 L0 8 Z" fill="#3ccd6e" />
-        </marker>
-      </defs>
-      <rect x="224" y="58" width="80" height="88" rx="10" fill="#ebf9f0" stroke="#2ba357" strokeWidth="2" />
-      <rect x="236" y="72" width="56" height="8" rx="4" fill="#a5e7bc" />
-      <circle cx="244" cy="100" r="4" fill="#3ccd6e" />
-      <circle cx="256" cy="100" r="4" fill="#3ccd6e" />
-      <circle cx="268" cy="100" r="4" fill="#a5e7bc" />
-      <rect x="236" y="116" width="56" height="6" rx="3" fill="#d0f0e0" />
-      <rect x="236" y="128" width="40" height="6" rx="3" fill="#d0f0e0" />
-    </svg>
-  );
-}
-
-function IllusDualEditing() {
-  return (
-    <svg width="400" height="220" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="双模编辑体验示意图">
-      <rect x="8" y="12" width="180" height="196" rx="10" fill="#f9fafb" stroke="#d0f0e0" strokeWidth="2" />
-      <rect x="16" y="24" width="164" height="24" rx="6" fill="#d0f0e0" />
-      <circle cx="28" cy="36" r="4" fill="#f87171" />
-      <circle cx="40" cy="36" r="4" fill="#fbbf24" />
-      <circle cx="52" cy="36" r="4" fill="#3ccd6e" />
-      <rect x="24" y="60" width="148" height="3" rx="1" fill="#e5e7eb" />
-      <rect x="24" y="70" width="120" height="3" rx="1" fill="#e5e7eb" />
-      <rect x="24" y="80" width="148" height="3" rx="1" fill="#e5e7eb" />
-      <rect x="24" y="90" width="96" height="3" rx="1" fill="#e5e7eb" />
-      <rect x="24" y="102" width="60" height="3" rx="1" fill="#e5e7eb" />
-      <rect x="24" y="118" width="100" height="22" rx="6" fill="#ebf9f0" stroke="#3ccd6e" strokeWidth="1.5" />
-      <rect x="132" y="118" width="40" height="22" rx="6" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5" />
-      <rect x="24" y="152" width="80" height="22" rx="6" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5" />
-      <path d="M210 60 L240 40 L270 60 L240 80 Z" fill="#d0f0e0" stroke="#2ba357" strokeWidth="1.5" />
-      <rect x="232" y="82" width="16" height="20" rx="3" fill="#ebf9f0" stroke="#2ba357" strokeWidth="1.5" />
-      <rect x="260" y="70" width="50" height="16" rx="8" fill="#ebf9f0" stroke="#2ba357" strokeWidth="1.5" />
-      <rect x="320" y="92" width="50" height="16" rx="8" fill="#ebf9f0" stroke="#2ba357" strokeWidth="1.5" />
-      <path d="M248 92 L248 102" stroke="#2ba357" strokeWidth="2" />
-      <path d="M248 102 L310 102" stroke="#2ba357" strokeWidth="2" markerEnd="url(#arrowEdit)" />
-      <defs>
-        <marker id="arrowEdit" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-          <path d="M0 0 L6 3 L0 6 Z" fill="#2ba357" />
-        </marker>
-      </defs>
-      <rect x="270" y="132" width="100" height="14" rx="7" fill="#ebf9f0" stroke="#a5e7bc" strokeWidth="1" />
-      <rect x="280" y="156" width="80" height="14" rx="7" fill="#d0f0e0" stroke="#a5e7bc" strokeWidth="1" />
-      <rect x="275" y="178" width="60" height="14" rx="7" fill="#ebf9f0" stroke="#a5e7bc" strokeWidth="1" />
-      <rect x="300" y="110" width="70" height="3" rx="1" fill="#e5e7eb" />
-      <rect x="300" y="118" width="56" height="3" rx="1" fill="#e5e7eb" />
-    </svg>
-  );
-}
-
-function IllusNoAccount() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="300"
-      height="200"
-      viewBox="40 38 492 344"
-      fill="none"
-      aria-label="无账户协作示意图"
-    >
-      <line x1="300" y1="120" x2="100" y2="300" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
-      <line x1="300" y1="120" x2="300" y2="348" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
-      <line x1="300" y1="120" x2="500" y2="300" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
-      <line x1="100" y1="300" x2="300" y2="348" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
-      <line x1="500" y1="300" x2="300" y2="348" stroke="#86efac" strokeWidth="2.2" strokeDasharray="6 4" />
-      <line x1="100" y1="300" x2="500" y2="300" stroke="#86efac" strokeWidth="1.8" strokeDasharray="4 4" />
-
-      <circle cx="300" cy="120" r="36" fill="none" stroke="#16a34a" strokeWidth="3.5" />
-      <circle cx="300" cy="120" r="14" fill="#86efac" opacity="0.65" />
-
-      <circle cx="100" cy="300" r="28" fill="none" stroke="#4ade80" strokeWidth="2.8" />
-      <circle cx="100" cy="300" r="7" fill="#4ade80" opacity="0.82" />
-
-      <circle cx="300" cy="348" r="28" fill="none" stroke="#4ade80" strokeWidth="2.8" />
-      <circle cx="300" cy="348" r="7" fill="#4ade80" opacity="0.82" />
-
-      <circle cx="500" cy="300" r="28" fill="none" stroke="#4ade80" strokeWidth="2.8" />
-      <circle cx="500" cy="300" r="7" fill="#4ade80" opacity="0.82" />
-
-      <rect x="446" y="44" width="32" height="26" rx="6" stroke="#86efac" strokeWidth="2.2" />
-      <path
-        d="M453 54 L453 43 Q453 34 461 34 Q469 34 469 43 L469 54"
-        stroke="#86efac"
-        strokeWidth="2.2"
-      />
-      <circle cx="462" cy="66" r="3.5" fill="#86efac" />
-
-      <rect x="46" y="44" width="26" height="32" rx="4" stroke="#86efac" strokeWidth="2.2" />
-      <line x1="53" y1="55" x2="65" y2="55" stroke="#86efac" strokeWidth="2" />
-      <line x1="53" y1="62" x2="65" y2="62" stroke="#86efac" strokeWidth="2" />
-      <line x1="53" y1="69" x2="62" y2="69" stroke="#86efac" strokeWidth="2" />
-
-      <path d="M75 62 L93 62" stroke="#22c55e" strokeWidth="2" markerEnd="url(#illus-no-account-arrow)" />
-      <defs>
-        <marker id="illus-no-account-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-          <path d="M0 0 L8 4 L0 8 Z" fill="#22c55e" />
-        </marker>
-      </defs>
-    </svg>
-  );
-}
-
-function IllusCliAgent() {
-  return (
-    <svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Agent 开发闭环示意图">
-      <rect x="20" y="40" width="130" height="120" rx="8" fill="#f9fafb" stroke="#2ba357" strokeWidth="2" />
-      <rect x="20" y="40" width="130" height="24" rx="8" fill="#d0f0e0" stroke="#2ba357" strokeWidth="2" />
-      <circle cx="36" cy="52" r="4" fill="#f87171" />
-      <circle cx="48" cy="52" r="4" fill="#fbbf24" />
-      <circle cx="60" cy="52" r="4" fill="#3ccd6e" />
-      <rect x="44" y="78" width="80" height="4" rx="2" fill="#a5e7bc" />
-      <rect x="32" y="94" width="70" height="4" rx="2" fill="#e5e7eb" />
-      <rect x="32" y="110" width="90" height="4" rx="2" fill="#e5e7eb" />
-      <rect x="32" y="126" width="60" height="4" rx="2" fill="#e5e7eb" />
-      <rect x="32" y="142" width="76" height="4" rx="2" fill="#e5e7eb" />
-      <path d="M165 100 L205 100" stroke="#3ccd6e" strokeWidth="2" strokeLinecap="round" markerEnd="url(#arrowCliAgent)" />
-      <defs>
-        <marker id="arrowCliAgent" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-          <path d="M0 0 L6 3 L0 6 Z" fill="#3ccd6e" />
-        </marker>
-      </defs>
-      <rect x="220" y="50" width="80" height="100" rx="12" fill="#ebf9f0" stroke="#2ba357" strokeWidth="2" />
-      <rect x="240" y="70" width="40" height="28" rx="6" fill="#fff" stroke="#a5e7bc" strokeWidth="1.5" />
-      <circle cx="254" cy="84" r="4" fill="#2ba357" />
-      <circle cx="266" cy="84" r="4" fill="#2ba357" />
-      <rect x="250" y="94" width="20" height="3" rx="1.5" fill="#a5e7bc" />
-      <line x1="260" y1="50" x2="260" y2="38" stroke="#2ba357" strokeWidth="2" />
-      <circle cx="260" cy="34" r="4" fill="#3ccd6e" />
-      <rect x="240" y="110" width="44" height="5" rx="2.5" fill="#d0f0e0" />
-      <rect x="240" y="122" width="32" height="5" rx="2.5" fill="#d0f0e0" />
-      <rect x="240" y="134" width="38" height="5" rx="2.5" fill="#d0f0e0" />
-    </svg>
-  );
-}
-
-/* ===== Data ===== */
-
-const ILLUSTRATIONS: Record<SellingPointId, ReactNode> = {
-  'onboarding-ai': <IllusOnboardingAi />,
-  'agent-dev-loop': <IllusCliAgent />,
-  'private-deploy': <IllusZeroDependency />,
-  'no-account': <IllusNoAccount />,
-  'edit-and-draft': <IllusDualEditing />,
-};
+import { SELLING_POINT_ILLUSTRATIONS } from '../selling-point-illustrations';
 
 const modules = SELLING_POINTS.map((point) => ({
   ...point,
-  illustration: ILLUSTRATIONS[point.id],
+  illustration: SELLING_POINT_ILLUSTRATIONS[point.id],
 }));
-
-/* ===== Feature Module ===== */
 
 const rowStyle: React.CSSProperties = {
   display: 'flex',
@@ -261,13 +71,15 @@ function FeatureModule({
           <span
             key={tag}
             style={{
-              background: data.tagBg,
-              color: data.tagColor,
+              display: 'inline-block',
               padding: '4px 12px',
               borderRadius: '16px',
-              fontSize: '14px',
-              display: 'inline-block',
+              fontSize: '0.8125rem',
+              fontWeight: 500,
+              background: data.tagBg,
+              color: data.tagColor,
               transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+              cursor: 'default',
             }}
             onMouseEnter={(e) => handleTagHover(e.currentTarget, true)}
             onMouseLeave={(e) => handleTagHover(e.currentTarget, false)}
@@ -292,7 +104,10 @@ function FeatureModule({
   return (
     <div
       className="mdocs-why-row"
-      style={rowStyle}
+      style={{
+        ...rowStyle,
+        flexDirection: imageRight ? 'row' : 'row-reverse',
+      }}
       onMouseEnter={(e) => handleRowHover(e.currentTarget, true)}
       onMouseLeave={(e) => handleRowHover(e.currentTarget, false)}
     >
@@ -310,8 +125,6 @@ function FeatureModule({
     </div>
   );
 }
-
-/* ===== Page ===== */
 
 export function FeatureSection() {
   return (
@@ -335,11 +148,9 @@ export function FeatureSection() {
           </p>
         </div>
 
-        <FeatureModule data={modules[0]} imageRight />
-        <FeatureModule data={modules[1]} imageRight={false} />
-        <FeatureModule data={modules[2]} imageRight />
-        <FeatureModule data={modules[3]} imageRight={false} />
-        <FeatureModule data={modules[4]} imageRight />
+        {modules.map((mod, i) => (
+          <FeatureModule key={mod.id} data={mod} imageRight={i % 2 === 0} />
+        ))}
       </div>
     </section>
   );
