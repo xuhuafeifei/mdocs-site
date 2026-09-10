@@ -1,5 +1,17 @@
 # 更新日志
 
+## v1.2.1
+
+### 修复与体验
+- **左侧目录树滚动**：头尾固定，仅中间树列表滚动；悬浮层移出主壳，避免整页被正文撑高
+- **DeepSeek 模型**：默认改为官方名 `deepseek-flash`（V4.1 Flash）；旧 `deepseek-v4-flash` / `deepseek-v4.1-flash` 等别名保存时归一；默认上下文 1M；`deepseek-v4-pro` 仍可选（将路由至 Flash）
+
+### 其它
+- **HTML 文档编辑器**：预览 / 源码分栏（file_type=html）
+- 图谱与路径相关小改进
+
+---
+
 ## v1.2.0
 
 ### Agent
