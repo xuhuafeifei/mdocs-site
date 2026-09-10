@@ -1,5 +1,18 @@
 # 更新日志
 
+## v1.2.2
+
+### HTML 文档（一期）
+- **新建 HTML**：侧栏「新建」下拉可选 Markdown / HTML；树中图标为 `H`
+- **预览与编辑**：默认预览（`iframe` + `sandbox=""`，不执行脚本）；可手动切编辑（textarea 源码）/ 预览
+- **草稿与发布**：与 Markdown 共用 IndexedDB 草稿壳（`contentKind=html` 存原文）；乐观锁 / 冲突 merge 走原文三路，不经 Lexical 桥
+- **政策**：不进全文搜索、不进知识图谱抽取；`GET ?format=text` 返回 HTML 原文
+- **二期预告**：与 Markdown 共用顶栏（标题 / 域选择 / 同步等）；AI 帮写是否接入 HTML 另议
+
+详见 [HTML 文档](./usage/html-documents.md)。
+
+---
+
 ## v1.2.1
 
 ### 修复与体验
@@ -7,7 +20,6 @@
 - **DeepSeek 模型**：默认改为官方名 `deepseek-flash`（V4.1 Flash）；旧 `deepseek-v4-flash` / `deepseek-v4.1-flash` 等别名保存时归一；默认上下文 1M；`deepseek-v4-pro` 仍可选（将路由至 Flash）
 
 ### 其它
-- **HTML 文档编辑器**：预览 / 源码分栏（file_type=html）
 - 图谱与路径相关小改进
 
 ---

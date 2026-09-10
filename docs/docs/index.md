@@ -23,6 +23,7 @@
 
 - [设置页面概览](./usage/settings.md)——集中配置中心
 - [编辑体验](./usage/markdown.md)——富文本编辑，Markdown 存储
+- [HTML 文档](./usage/html-documents.md)——沙箱预览与源码编辑（一期）
 - [流程图生成](./usage/flowchart.md)——拖拽绘制，嵌入文档
 - [草稿与同步](./usage/drafts.md)——本地优先，按需发布
 - [版本冲突与合并](./usage/merge-conflicts.md)——409 时的三栏合并
