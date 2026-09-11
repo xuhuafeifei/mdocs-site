@@ -1,5 +1,25 @@
 # 更新日志
 
+## v1.3.0
+
+### HTML 文档（二期：DocChrome 顶栏）
+- **DocChrome**：Markdown 与 HTML **共用文档顶栏**（标题 / 域选择 / 同步 / 发布 / 删除 / 收藏 / 文档信息 / 评论），窄屏 reader 同壳
+- **HTML 帮写开放**：工作台仍是 Markdown；进场以 HTML 原文为 seed，完成后写回 HTML 草稿
+- **政策表**：删除 `editor` 列，改为按 `fileType` 分派编辑器；新增 `aiWrite` / `comments` 能力列
+- 修复 HTML「文档信息」面板添加邀请失败
+
+详见 [HTML 文档](./usage/html-documents.md)。
+
+### 智能助手
+- **修复**：覆写 `.html` 文档时误传 Markdown 格式导致失败；现在按文件类型传对应格式（HTML 传原文），助手也不再声称「不支持写 HTML」
+- **工具**：`get_document` 返回 `fileType`；`create_document` 可直接建 HTML；`list_tree` 结果含 HTML
+- **聊天体验**：Mermaid 图不再因输入而重新渲染、切换会话不再闪「渲染中」；长回答上滑时新增「置底」按钮
+
+### 其它
+- 域级知识图谱顶层遍历改用文件类型政策表过滤（HTML 等不参与抽取）
+
+---
+
 ## v1.2.2
 
 ### HTML 文档（一期）
