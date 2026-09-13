@@ -37,6 +37,7 @@
 - [环境要求](./deployment/requirements.md)
 - [配置](./deployment/config.md)
 - [反向代理](./deployment/reverse-proxy.md)
+- [客户端壳（Android / 桌面）](./deployment/clients.md)——自部署服务器的原生 App 外壳
 
 ## 其他
 

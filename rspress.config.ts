@@ -84,6 +84,10 @@ export default defineConfig({
               text: '反向代理示例',
               link: '/docs/deployment/reverse-proxy',
             },
+            {
+              text: '客户端壳（Android / 桌面）',
+              link: '/docs/deployment/clients',
+            },
           ],
         },
         { text: 'FAQ', link: '/docs/faq' },
