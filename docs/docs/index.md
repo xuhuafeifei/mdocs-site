@@ -42,3 +42,7 @@
 
 - [FAQ](./faq.md)
 - [更新日志](./changelog.md)
+
+---
+
+**项目仓库**：[xuhuafeifei/mdocs](https://github.com/xuhuafeifei/mdocs) — 如果觉得有帮助，欢迎 Star ⭐
