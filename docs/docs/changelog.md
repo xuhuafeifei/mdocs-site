@@ -1,5 +1,17 @@
 # 更新日志
 
+## v1.3.15
+
+### 升级
+- **`mdocs update` 后命令可执行**：覆盖安装时给 `package.json` 里的 bin 加上可执行位，避免升级后 `/usr/bin/mdocs` Permission denied
+
+### 附件下载
+- 非图片附件一律 `application/octet-stream` + `Content-Disposition: attachment`
+- 桌面壳遇到附件链接时交给系统浏览器下载，不再在窗口里打开预览
+
+### 手机端
+- 窄屏隐藏「AI 帮写」入口（欢迎页按钮、文档顶栏、助手打开帮写）
+
 ## v1.3.14
 
 同 v1.3.13（npm 上 1.3.13 卡在 staged，改发此版本）。
