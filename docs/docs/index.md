@@ -15,7 +15,7 @@
 
 ## 核心设计
 
-- [域隔离](./core-concepts/domain.md)——团队与个人的逻辑边界
+- [工作空间](./core-concepts/domain.md)——团队与个人的逻辑边界
 - [无账户身份识别](./core-concepts/no-account.md)——打开即用，无需注册
 - [文档级邀请](./core-concepts/invitation.md)——精细到单篇文档的权限控制
 
@@ -30,7 +30,7 @@
 - [我的文章与邀请](./usage/my-documents.md)——集中管理创作内容
 - [收藏功能](./usage/bookmarks.md)——快速标记重要文档
 - [文档评论](./usage/comments.md)——协作讨论与反馈
-- [受限域成员与名单模板](./usage/domain-members.md)——团队域邀人、复用成员名单
+- [受限工作空间成员与名单模板](./usage/domain-members.md)——团队工作空间邀人、复用成员名单
 
 ## 部署运维
 

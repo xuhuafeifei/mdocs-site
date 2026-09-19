@@ -65,13 +65,13 @@ export MDOCS_SERVER="http://101.132.222.88:4000"
 
 | 命令                                                                               | 用途                          |
 | ---------------------------------------------------------------------------------- | ----------------------------- |
-| `search --q <关键词> [--domain <域ID>] [--topn <数量>]`                            | 全文检索文档                  |
+| `search --q <关键词> [--domain <工作空间 ID>] [--topn <数量>]`                            | 全文检索文档                  |
 | `get <文档ID>`                                                                     | 读取文档完整内容              |
-| `create --name <文件名.md> --content <正文> [--domain <域ID>] [--parent <目录ID>]` | 创建文档                      |
+| `create --name <文件名.md> --content <正文> [--domain <工作空间 ID>] [--parent <目录ID>]` | 创建文档                      |
 | `update <文档ID> --content <新正文> [--title <新标题>]`                            | 更新文档内容                  |
-| `domains`                                                                          | 列出当前 Token 可访问的所有域 |
-| `mkdir --domain <域ID> --name <目录名> [--parent <目录ID>]`                        | 创建目录                      |
-| `ls <documentId>` 或 `ls "关键词" --domain <域ID>`                                 | 列出目录下子节点              |
+| `domains`                                                                          | 列出当前 Token 可访问的所有工作空间 |
+| `mkdir --domain <工作空间 ID> --name <目录名> [--parent <目录ID>]`                        | 创建目录                      |
+| `ls <documentId>` 或 `ls "关键词" --domain <工作空间 ID>`                                 | 列出目录下子节点              |
 
 ### 使用示例
 
@@ -84,7 +84,7 @@ node ~/.mdocs-cli/mdocs.mjs create \
   --name "笔记.md" \
   --title "我的笔记" \
   --content "# 标题\n\n正文内容" \
-  --domain <域ID> \
+  --domain <工作空间 ID> \
   --parent <目录ID>
 
 # 更新文档

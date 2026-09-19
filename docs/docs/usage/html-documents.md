@@ -14,7 +14,7 @@ mdocs 支持与 Markdown 平级的 **HTML 文档**（`file_type=html`，磁盘�
 
 ## 顶栏（与 Markdown 共用 DocChrome）
 
-标题、域选择、同步、发布、删除、收藏、文档信息（邀请 / 改权限）、**评论**；窄屏 reader 同壳。
+标题、工作空间、同步、发布、删除、收藏、文档信息（邀请 / 改权限）、**评论**；窄屏 reader 同壳。
 
 **AI 帮写**：HTML 同样提供入口。工作台仍是 Markdown 对话，但进场时以 HTML 原文作为初始稿，完成后写回 HTML 草稿，全程不做 Markdown ↔ HTML 静默转换。
 

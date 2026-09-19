@@ -48,7 +48,7 @@ export default defineConfig({
           text: '核心概念',
           items: [
             { text: '所见皆文件', link: '/docs/core-concepts/all-files' },
-            { text: '域隔离', link: '/docs/core-concepts/domain' },
+            { text: '工作空间', link: '/docs/core-concepts/domain' },
             { text: '文档级邀请', link: '/docs/core-concepts/invitation' },
             {
               text: '无账户身份识别',
@@ -69,7 +69,7 @@ export default defineConfig({
             { text: '文档收藏', link: '/docs/usage/bookmarks' },
             { text: '文档评论', link: '/docs/usage/comments' },
             {
-              text: '受限域成员与模板',
+              text: '受限工作空间成员与模板',
               link: '/docs/usage/domain-members',
             },
             { text: '恢复码（兼容）', link: '/docs/usage/recovery-code' },

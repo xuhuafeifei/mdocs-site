@@ -81,9 +81,9 @@ mdocs start
     data.sqlite       # 元数据（文档索引、权限、访客、审计日志）
   files/
     docs/
-      {domain_id}/    # 每个域独立的子目录
-        a.md          # 域内文档
-        folder/       # 域内子目录（逻辑存在于数据库）
+      {domain_id}/    # 每个工作空间独立的子目录
+        a.md          # 工作空间内文档
+        folder/       # 工作空间内子目录（逻辑存在于数据库）
           b.md
     assets/           # 上传的附件
   logs/               # 运行日志

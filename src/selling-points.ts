@@ -81,7 +81,7 @@ export const SELLING_POINTS: SellingPointCopy[] = [
     id: 'no-account',
     title: '无账户协作',
     subtitle:
-      '访问者即身份，无需注册登录。通过「域隔离 + 文档级邀请」从完全私有到开放协作，小团队可立即开写。',
+      '访问者即身份，无需注册登录。通过「工作空间 + 文档级邀请」从完全私有到开放协作，小团队可立即开写。',
     tags: ['无需注册', '精细权限'],
     tagBg: '#e0f2f1',
     tagColor: '#00695c',
