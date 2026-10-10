@@ -2,6 +2,19 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v1.3.23
+
+### 智能助手会话
+- 修复历史会话列表偶发「只剩一条」：`session.json` 读改写改为 Manager 方法级串行队列 + 原子写；读失败时从 `*.jsonl` 恢复索引
+- 运维命令：`mdocs agent session repair --dry-run|--confirm`（可加 `--visitor` / `--kind`），把孤儿 transcript 补回列表
+
+### 文档信息
+- 新增 **字符数**：去 Markdown 语法 / HTML 标签后的纯文本总字符（异步统计，回答「写了多少字」）
+
+### 语义模型与日志
+- Embedding GGUF 默认目录改为 `~/.mdocs/embedding/`（随 `MDOCS_DATA_DIR`）；旧 `~/.fgbg/shared/embedding/` 仅作已下载文件回退
+- 文件日志默认只落 **error+**（`MDOCS_LOG_LEVEL` 可改）；路径仍为 `~/.mdocs/logs/`；无前台管理页
+
 ## v1.3.22
 
 ### 语义索引

@@ -69,11 +69,15 @@ mdocs visitor migrate --from Alice --to Bob --dry-run
 
 # 显式启动服务
 mdocs start
+
+# 修复智能助手会话索引（历史列表丢条目时；须 --dry-run 或 --confirm）
+mdocs agent session repair --dry-run
+mdocs agent session repair --confirm
 ```
 
 ## 运行时数据
 
-首次启动后，数据目录自动创建在 `~/.mdocs/`：
+首次启动后，数据目录自动创建在 `~/.mdocs/`（可用 `MDOCS_DATA_DIR` 改根目录）：
 
 ```
 ~/.mdocs/
@@ -86,7 +90,9 @@ mdocs start
         folder/       # 工作空间内子目录（逻辑存在于数据库）
           b.md
     assets/           # 上传的附件
-  logs/               # 运行日志
+  logs/               # 运行日志（默认文件级别 error+，见 MDOCS_LOG_LEVEL）
+  embedding/          # 本地语义模型 GGUF（可用 MDOCS_EMBEDDING_DIR 覆盖）
+  tenant/             # 访客私有运行时（含 agent 会话 jsonl）
 ```
 
 文档以 Lexical JSON 格式存储在 `files/docs/` 中，只能由 mdocs 加载编辑。
