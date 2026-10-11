@@ -2,6 +2,12 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v1.3.27
+
+### 升级与原生模块
+- **`mdocs update`**：升级后强制 `npm rebuild better-sqlite3`（及已安装的 `node-llama-cpp`），避免保留「有包无 `.node`」导致启动报 `Could not locate the bindings file`
+- **CLI**：`version` / `update` 不再预加载服务端 DB，sqlite 半残时仍可跑 `mdocs update` 自救
+
 ## v1.3.26
 
 同 v1.3.25（npm 上 1.3.25 卡在 processing，改发此版本）。
