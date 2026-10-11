@@ -194,7 +194,7 @@ npm install typebox@1.1.38 --no-audit --no-fund
 mdocs update
 ```
 
-该命令写死从淘宝镜像 [`https://registry.npmmirror.com`](https://registry.npmmirror.com) 拉取最新 `@fgbg/mdocs`，**保留现有 `node_modules`**，再用 `npm install` 同步依赖并 **`npm rebuild better-sqlite3`**（避免保留半残原生模块）。升级后重启服务即可。
+该命令写死从淘宝镜像 [`https://registry.npmmirror.com`](https://registry.npmmirror.com) 拉取最新 `@fgbg/mdocs`，**保留现有 `node_modules`**，再用 `npm install` 做差量依赖同步；仅当 `better-sqlite3` 等原生绑定加载失败时才 `npm rebuild`（正常升级不会每次重编）。升级后重启服务即可。
 
 若启动报 `Could not locate the bindings file`（`better-sqlite3`），在包目录重建即可：
 
