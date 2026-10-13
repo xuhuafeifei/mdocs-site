@@ -2,6 +2,11 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v1.3.31
+
+### 智能助手 / 表格
+- 行工具拆分：`sheet_append_rows`（表末追加）、`sheet_update_row`（改已有行）、`sheet_insert_rows_at`（插在 `afterRowId` 后）；移除混用的 `sheet_upsert_row` / `sheet_insert_rows`
+
 ## v1.3.30
 
 ### 智能助手 / 帮写
