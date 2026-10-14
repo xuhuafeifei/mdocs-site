@@ -69,7 +69,7 @@ Token / Cookie 丢失时的自助找回；引入登录密码后已边缘化。�
 | 我的收藏 | [收藏功能](./bookmarks.md) |
 | 我的文章 | [我的文章](./my-documents.md) |
 | 工作空间 / 成员模板 | [受限工作空间成员与名单模板](./domain-members.md) |
-| AI | [智能助手（AI）](./onboarding-ai.md)（含 DeepSeek 配置与私人 Agent Skills） |
+| AI | [智能助手（AI）](./onboarding-ai.md)（含模型 / 思考强度 / 单轮超时与私人 Agent Skills） |
 | 保存与发布 | [草稿与同步](./drafts.md) |
 
 ---
