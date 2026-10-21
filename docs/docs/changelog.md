@@ -2,6 +2,15 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v2.0.10
+
+### 智能助手
+- **`append_document` / `replace_document_markdown`**：.md 文末追加、纯文本层精确替换片段（无整篇覆写选择卡）
+- **写后短提示落盘**：overwrite / append / replace 成功后 session 只记 `DOCUMENT_CHANGED`，提示重新 `get_document`，不把全文塞进上下文
+- **PC 助手贴左**：打开助手时可替换左侧目录并拖宽（`agent-dock-left`）
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@2.0.10`。
+
 ## v2.0.9
 
 ### 智能助手
