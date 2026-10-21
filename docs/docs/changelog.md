@@ -2,6 +2,16 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v2.1.3
+
+### 智能助手
+- **Lexical → Markdown**：服务端真导出（`lexicalJsonToMarkdown`）；`convert` 反向不再是纯文本近似
+- **`get_document` 默认 `format=md`**：读文即 Markdown；仍可选 `text` / `json`
+- **`replace_document_markdown`**：在 MD 源码层找换再写回，避免局部改把全文格式冲掉；提示优先片段替换而非整篇覆写
+- **⌘/Alt+点击**树节点：在下栏打开（分屏）
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@2.1.3`。
+
 ## v2.1.2
 
 ### 编辑
