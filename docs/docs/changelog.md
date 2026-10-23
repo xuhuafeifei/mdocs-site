@@ -2,6 +2,16 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v2.1.7
+
+### 冲突合并
+- **AI 行级合并**：Merge 页「AI 合并」把 git 冲突 Markdown 交给模型，拿回定稿正文（`suggest-merge-resolutions`）
+- **合并说明**：完成合并发布走专用弹窗 + `suggest-merge-message`（不再复用普通发布说明）
+- **助手**：`get_editor_draft` 按需静默取浏览器本地草稿（SSE+requestId）；再 `suggest_document_merge` / `suggest_document_merge_message`
+- **不做 CLI ai-merge**：浏览器草稿 CLI 读不到
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@2.1.7`。
+
 ## v2.1.6
 
 ### 文档信息
