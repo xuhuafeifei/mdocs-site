@@ -2,6 +2,16 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v2.1.10
+
+### Agent / 导出
+- **列表转 Markdown**：`listitem` 下直接挂文字（无 paragraph）时不再导出成空的 `-`；`get_document(format=md)` 能还原正文
+
+### 编辑器
+- **@fgbg/lobe-editor** 升到 `1.0.0-fork.27`（选中图片可下载）
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@2.1.10`。
+
 ## v2.1.9
 
 ### 分屏顶栏 / 标签
