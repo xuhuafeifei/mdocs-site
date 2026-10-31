@@ -2,6 +2,61 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v3.1.2
+
+### 插件流水线 / Agent
+- **目录统一**：安装实体 `plugins-home/<name>/`；租户 `plugins-data` / `mcp` / `skills`；Engram 连接时绑访客 `ENGRAM_DATA_DIR`
+- **git_clone** 步骤：clone 到 `plugins-home`（相对 dest，仅 https）
+- **Agent**：`install_pipeline` 可顺手安装；`query_skill` / `list_plugin_home` / `run_plugin_cli`（白名单 CLI，相对路径）
+- **CLI 落盘**：靠 cwd + 假 `HOME` 控写路径；`MDOCS_PLUGIN_*` 仅合约信号（见 ADR 018）
+
+升级：本机/服务器 **pack 覆盖**（GitHub 超前于 npm 时）；或稍后 `npm i -g @fgbg/mdocs@3.1.2`。
+
+## v3.0.3
+
+### 修复
+- **整篇 Diff（overwrite_all）**：编辑器 JSON vs MD 再解析用「同类型 + 纯文本」相等，未改段落不再假红绿；同 hunk 红绿贴紧、不同 hunk 留间距
+- **图片缩放**：拖动手柄松手宽度公式与拖动一致；选中/拖动中保持手柄
+- **Mermaid / Vite**：`mermaid` 不预构建（避免 sequenceDiagram chunk 假路径）；其 CJS 依赖（dayjs、sanitize-url 等）nested `optimizeDeps.include`
+- **依赖**：`@fgbg/lobe-editor` → `1.0.0-fork.35`
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@3.0.3`。
+
+## v3.0.2
+
+### 修复
+- **版本历史预览**：不再挂第二套 Lobe/Lexical（生产包 Lexical #38 empty state）；改为转 Markdown + `react-markdown` 只读预览
+
+升级：服务器包更新，或稍后 `npm i -g @fgbg/mdocs@3.0.2`。
+
+## v3.0.1
+
+### 修复
+- **版本历史**：点历史条目偶发整页「加载中」——`/` 与 `/doc/:id` 不再各挂一份 App；预览加错误边界，切版本保留旧预览
+- **整篇 Diff**：未改动的块不再因 MD 回解析 meta 噪声被标红绿（`@fgbg/lobe-editor` → `1.0.0-fork.30`）
+- **Pending Diff**：再提案前自动 Undo All，不再报 `pending diff; resolve before applying more ops`
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@3.0.1`。
+
+## v3.0.0
+
+大版本：智能助手 × Lobe **Inline Diff** 审阅写文，以及可配置上传上限。
+
+### 智能助手 × Diff（仅 `.md` / Lexical）
+- **按块提案**：`update_slot` / `insert_after_slot` / `remove_slot` / `overwrite_all`（整篇 LCS）经 SSE 写入当前打开编辑器，物化为红绿 `DiffHunk`
+- **审阅**：编辑器内 Keep / Undo（及全部接受/拒绝）；有未决 Diff 时禁止发布
+- **读门牌**：`get_document_lexical_lines` 供 Agent 看外层块；HTML / sheet **不走** Lobe Diff（HTML 仍用落盘覆写；表用 `sheet_*`）
+- **落盘写仍在**：`overwrite_document` / `append_document` / `replace_document_markdown` 与 Diff 两套并存（后续可能按 mode 裁剪工具集）
+
+### 编辑器依赖
+- **@fgbg/lobe-editor** → `1.0.0-fork.28`（slot Diff API + 相邻红绿 hunk 贴紧）
+
+### 上传
+- **单文件上限**默认 100MiB，可在设置「通用」里改，或环境变量 `MDOCS_MAX_UPLOAD_BYTES`；落盘 `~/.mdocs/server-settings.json`
+- API：`GET/PUT /api/server-settings`
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@3.0.0`。
+
 ## v2.1.10
 
 ### Agent / 导出
