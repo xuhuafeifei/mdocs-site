@@ -2,6 +2,28 @@
 
 现行文档里，产品概念「域」已改称 **工作空间**。下面各版本仍按当时的叫法记录。
 
+## v3.1.5
+
+### 表情包
+- **内置图库**：系统库可从 npm 包整包同步；「我的表情包」可上传（id 系统分配）、改描述、删除
+- **助手发图**：正文写 `[meme:id]`；单条消息最多 5 张
+- **设置页**：系统图库 / 我的表情包分栏；手机端上传与卡片布局适配
+
+### Agent / Skill
+- **纯 prompt vs Skill+CLI**：普通助手用 `create_user_skill` 只打包指令；需要 clone/安装走插件流水线
+- **Skill / 目录名**：允许连字符（不能以 `-` 开头；目录段不能是纯 `-`）
+- **系统提示词诊断**弹框；成员弹窗滚动与移动端修复
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@3.1.5`；服务器亦可 pack 覆盖。
+
+## v3.1.4
+
+### 插件流水线 / Agent
+- **git_clone**：支持 SSH（`git@` / `ssh://`）与 https；禁止交互登录（BatchMode / 清 credential helper）
+- **read_plugin_content**：读取 plugins-home 内脚本正文，便于装后自测
+
+升级：`mdocs update` 或 `npm i -g @fgbg/mdocs@3.1.4`。
+
 ## v3.1.3
 
 ### 修复
