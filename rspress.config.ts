@@ -8,7 +8,7 @@ export default defineConfig({
   },
   lang: 'zh-CN',
   title: 'mdocs-site',
-  description: '开源 Markdown 知识库 · 上手 AI · Agent 开发闭环 · 纯私有化',
+  description: '专门为 Markdown 设计的 Agent 工作台',
   icon: '/favicon.svg',
   logo: '/favicon.svg',
   logoText: 'mdocs',

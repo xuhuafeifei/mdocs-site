@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Bot, Rocket, X } from 'lucide-react';
 import mdocsLogoUrl from '../assets/mdocs-logo.svg?url';
-import { HERO_EYEBROW, HERO_SUPPORT, HERO_TAGS } from '../constants';
+import { HERO_TAGS, HERO_TITLE, HERO_TITLE_EN } from '../constants';
 
 const BASE = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
 
@@ -147,25 +147,15 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
         mdocs
       </p>
 
-      <p
-        style={{
-          fontSize: '0.9375rem',
-          fontWeight: 600,
-          color: '#2ba357',
-          margin: '0 0 16px',
-          letterSpacing: '0.04em',
-        }}
-      >
-        {HERO_EYEBROW}
-      </p>
+      <h1 className="mdocs-hero-title">{HERO_TITLE}</h1>
 
-      <h1 className="mdocs-hero-title">自由书写，一字不落</h1>
+      <p className="mdocs-hero-subtitle-en">{HERO_TITLE_EN}</p>
 
       <p
         style={{
           fontSize: '0.875rem',
           color: '#4b9e6b',
-          margin: '0 0 12px',
+          margin: '0 0 32px',
           display: 'flex',
           justifyContent: 'center',
           gap: '8px',
@@ -188,22 +178,6 @@ export function Hero({ beforeHero, afterHero, beforeHeroActions, afterHeroAction
             {tag}
           </span>
         ))}
-      </p>
-
-      <p className="mdocs-hero-subtitle-en">Write freely. Never lose a word.</p>
-
-      <p
-        style={{
-          fontSize: '1rem',
-          color: '#3d6b52',
-          margin: '0 0 32px',
-          lineHeight: 1.6,
-          maxWidth: '480px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
-      >
-        {HERO_SUPPORT}
       </p>
 
       <div className="mdocs-hero-actions">

@@ -1,10 +1,10 @@
 import { GITHUB_REPO } from '../constants';
 
 const personas = [
-  { icon: '\u{1F464}', title: '独立开发者', desc: '本地优先，Agent 读写知识库' },
-  { icon: '\u{1F465}', title: '初创小团队', desc: '无需账号，分享即协作' },
-  { icon: '\u{1F393}', title: '研究者/学生', desc: '离线写作，断网不丢稿' },
-  { icon: '\u{1F4BB}', title: '用 Agent 开发的人', desc: 'mdocs-dev 契约 + CLI Skills' },
+  { icon: '\u{1F4DD}', title: '所见即所得', desc: '渲染态编辑 Markdown' },
+  { icon: '\u{1F504}', title: 'inline Diff', desc: '渲染态按块 Keep / Undo' },
+  { icon: '\u{1F916}', title: 'Agent 代劳', desc: '能力可交给 Agent · Engram' },
+  { icon: '\u{1F4E6}', title: 'MCP / CLI', desc: '流水线挂 Skills' },
 ];
 
 export function SocialProof() {

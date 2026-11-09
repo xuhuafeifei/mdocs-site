@@ -1,6 +1,6 @@
 # mdocs 文档
 
-欢迎阅读 mdocs 使用文档。
+**专门为 Markdown 设计的 Agent 工作台。**
 
 ## 快速开始
 

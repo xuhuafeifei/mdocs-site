@@ -13,19 +13,28 @@ export function CTA() {
         textAlign: 'center',
       }}
     >
-      <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#14532d', margin: '0 0 8px' }}>
+      <h2
+        style={{
+          fontSize: '2rem',
+          fontWeight: 700,
+          color: '#14532d',
+          margin: CTA_SUPPORT ? '0 0 8px' : '0 0 28px',
+        }}
+      >
         {CTA_HEADING}
       </h2>
-      <p style={{ fontSize: '1rem', color: '#4b5563', margin: '0 0 28px', lineHeight: 1.5 }}>
-        {CTA_SUPPORT}
-      </p>
+      {CTA_SUPPORT ? (
+        <p style={{ fontSize: '1rem', color: '#4b5563', margin: '0 0 28px', lineHeight: 1.5 }}>
+          {CTA_SUPPORT}
+        </p>
+      ) : null}
       <div className="mdocs-cta-actions">
         <a
           className="mdocs-btn mdocs-btn-primary"
           href={`${BASE}docs/getting-started/installation`}
         >
           <Rocket size={18} strokeWidth={2} aria-hidden />
-          立即创建我的知识库
+          安装并开始写
         </a>
         <a
           className="mdocs-btn mdocs-btn-secondary"

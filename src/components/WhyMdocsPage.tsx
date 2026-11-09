@@ -3,11 +3,15 @@ import {
   FEATURES_SUBHEADING,
   SELLING_POINTS,
 } from '../constants';
-import { SELLING_POINT_ILLUSTRATIONS } from '../selling-point-illustrations';
+import {
+  SELLING_POINT_ILLUSTRATIONS,
+  SHOT_LAYOUT,
+} from '../selling-point-illustrations';
 
 const modules = SELLING_POINTS.map((point) => ({
   ...point,
   illustration: SELLING_POINT_ILLUSTRATIONS[point.id],
+  layout: SHOT_LAYOUT[point.id],
 }));
 
 const rowStyle: React.CSSProperties = {
@@ -22,35 +26,24 @@ const rowStyle: React.CSSProperties = {
 
 const textStyle: React.CSSProperties = {
   flex: 1,
-  minWidth: '280px',
+  minWidth: '240px',
   padding: '0 8px',
 };
 
-const imgWrapStyle: React.CSSProperties = {
-  flex: '0 0 auto',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '12px',
-  transition: 'transform 0.25s ease, box-shadow 0.25s ease',
-  borderRadius: '12px',
-};
+function FeatureModule({ data }: { data: (typeof modules)[number] }) {
+  const { imageRight, widthPx, maxSharePct = 58, stackVertical } = data.layout;
+  const imgWrapStyle: React.CSSProperties = {
+    flex: `0 0 min(${widthPx}px, ${maxSharePct}%)`,
+    width: `min(${widthPx}px, ${maxSharePct}%)`,
+    maxWidth: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
 
-function FeatureModule({
-  data,
-  imageRight,
-}: {
-  data: (typeof modules)[number];
-  imageRight: boolean;
-}) {
   const handleRowHover = (el: HTMLDivElement, enter: boolean) => {
     el.style.transform = enter ? 'translateY(-2px)' : 'translateY(0)';
     el.style.boxShadow = enter ? '0 4px 12px rgba(0,0,0,0.06)' : 'none';
-  };
-
-  const handleImgHover = (el: HTMLDivElement, enter: boolean) => {
-    el.style.transform = enter ? 'scale(1.05)' : 'scale(1)';
-    el.style.boxShadow = enter ? '0 4px 12px rgba(0,0,0,0.1)' : 'none';
   };
 
   const handleTagHover = (el: HTMLSpanElement, enter: boolean) => {
@@ -59,7 +52,7 @@ function FeatureModule({
   };
 
   const textContent = (
-    <div style={textStyle}>
+    <div style={stackVertical ? { ...textStyle, minWidth: 0, width: '100%' } : textStyle}>
       <h2
         style={{
           fontSize: '1.5rem',
@@ -98,14 +91,10 @@ function FeatureModule({
     </div>
   );
 
-  const imageContent = (
-    <div
-      style={imgWrapStyle}
-      onMouseEnter={(e) => handleImgHover(e.currentTarget, true)}
-      onMouseLeave={(e) => handleImgHover(e.currentTarget, false)}
-    >
-      {data.illustration}
-    </div>
+  const imageContent = stackVertical ? (
+    <div style={{ width: '100%' }}>{data.illustration}</div>
+  ) : (
+    <div style={imgWrapStyle}>{data.illustration}</div>
   );
 
   return (
@@ -113,12 +102,19 @@ function FeatureModule({
       className="mdocs-why-row"
       style={{
         ...rowStyle,
-        flexDirection: imageRight ? 'row' : 'row-reverse',
+        flexDirection: stackVertical ? 'column' : 'row',
+        alignItems: stackVertical ? 'stretch' : 'center',
+        gap: stackVertical ? '28px' : '48px',
       }}
       onMouseEnter={(e) => handleRowHover(e.currentTarget, true)}
       onMouseLeave={(e) => handleRowHover(e.currentTarget, false)}
     >
-      {imageRight ? (
+      {stackVertical ? (
+        <>
+          {textContent}
+          {imageContent}
+        </>
+      ) : imageRight ? (
         <>
           {textContent}
           {imageContent}
@@ -142,6 +138,9 @@ export function WhyMdocsPage() {
             flex-direction: column !important;
             gap: 24px !important;
           }
+          .mdocs-pipeline-trio {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
 
@@ -156,13 +155,15 @@ export function WhyMdocsPage() {
         >
           {FEATURES_HEADING}
         </p>
-        <p style={{ fontSize: '0.9rem', color: '#6b7280', margin: 0 }}>
-          {FEATURES_SUBHEADING}
-        </p>
+        {FEATURES_SUBHEADING ? (
+          <p style={{ fontSize: '0.9rem', color: '#6b7280', margin: 0 }}>
+            {FEATURES_SUBHEADING}
+          </p>
+        ) : null}
       </div>
 
-      {modules.map((mod, i) => (
-        <FeatureModule key={mod.id} data={mod} imageRight={i % 2 === 0} />
+      {modules.map((mod) => (
+        <FeatureModule key={mod.id} data={mod} />
       ))}
     </div>
   );
