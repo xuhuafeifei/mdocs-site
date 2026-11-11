@@ -82,6 +82,7 @@ node ~/.mdocs-cli/mdocs.mjs create \
 | Code Block | `insert-codeBlock` | 代码块（语法高亮） |
 | Meta2d | `meta2d` | 流程图画布，详见 [流程图生成](./flowchart.md) |
 | Markmap | `markmap` | 思维导图，详见 [流程图生成 · Markmap](./flowchart.md#markmap-思维导图) |
+| Alert | `alert` | 提示块（注意 / 提示 / 重要 / 警告 / 小心），存成 `> [!NOTE]` 这类 GitHub 提示 |
 
 插入 Meta2d 后一般会自动打开画布。日常请用 `/` 插入；围栏写法仅作可选兼容，见 [流程图生成](./flowchart.md)。
 
